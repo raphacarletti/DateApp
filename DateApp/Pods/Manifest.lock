@@ -1,0 +1,16 @@
+PODS:
+  - BetterSegmentedControl (2.0.1)
+
+DEPENDENCIES:
+  - BetterSegmentedControl (~> 2.0)
+
+SPEC REPOS:
+  trunk:
+    - BetterSegmentedControl
+
+SPEC CHECKSUMS:
+  BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
+
+PODFILE CHECKSUM: 39bdcedf4de2379dd82673a2a4950c591e236711
+
+COCOAPODS: 1.10.0
