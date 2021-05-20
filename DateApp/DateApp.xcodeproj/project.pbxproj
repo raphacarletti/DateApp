@@ -22,6 +22,9 @@
 		6DD0DBAE2655D1D30025AF3C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0DBAD2655D1D30025AF3C /* Event.swift */; };
 		6DD0DBB02655D2BA0025AF3C /* EventsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0DBAF2655D2BA0025AF3C /* EventsListViewModel.swift */; };
 		6DD0DBB22655D3B20025AF3C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0DBB12655D3B20025AF3C /* Array+Extension.swift */; };
+		6DD0DBB426570D570025AF3C /* EventsListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0DBB326570D570025AF3C /* EventsListWorker.swift */; };
+		6DD0DBB72657130F0025AF3C /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0DBB62657130F0025AF3C /* EventDetailViewController.swift */; };
+		6DD0DBB9265716320025AF3C /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0DBB8265716320025AF3C /* Segues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		6DD0DBAD2655D1D30025AF3C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		6DD0DBAF2655D2BA0025AF3C /* EventsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModel.swift; sourceTree = "<group>"; };
 		6DD0DBB12655D3B20025AF3C /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		6DD0DBB326570D570025AF3C /* EventsListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListWorker.swift; sourceTree = "<group>"; };
+		6DD0DBB62657130F0025AF3C /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		6DD0DBB8265716320025AF3C /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		DA454E6BF599AECEEF44070C /* Pods-DateApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DateApp.release.xcconfig"; path = "Target Support Files/Pods-DateApp/Pods-DateApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +112,7 @@
 				6DD0DBA62655CF000025AF3C /* Cells */,
 				6D2E44482655BE31004B98BC /* Events.storyboard */,
 				6DD0DB9E2655C0A70025AF3C /* EventsList */,
+				6DD0DBB5265712D90025AF3C /* EventDetail */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -115,6 +122,7 @@
 			children = (
 				6DD0DB9F2655C0C00025AF3C /* EventsListViewController.swift */,
 				6DD0DBAF2655D2BA0025AF3C /* EventsListViewModel.swift */,
+				6DD0DBB326570D570025AF3C /* EventsListWorker.swift */,
 			);
 			path = EventsList;
 			sourceTree = "<group>";
@@ -125,6 +133,7 @@
 				6DD0DBA22655C6290025AF3C /* UIColor+Extension.swift */,
 				6DD0DBA42655CB270025AF3C /* UIImage+Extension.swift */,
 				6DD0DBB12655D3B20025AF3C /* Array+Extension.swift */,
+				6DD0DBB8265716320025AF3C /* Segues.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -152,6 +161,14 @@
 				6DD0DBAD2655D1D30025AF3C /* Event.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6DD0DBB5265712D90025AF3C /* EventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				6DD0DBB62657130F0025AF3C /* EventDetailViewController.swift */,
+			);
+			path = EventDetail;
 			sourceTree = "<group>";
 		};
 		892FB463014B4308F2687D02 /* Pods */ = {
@@ -281,12 +298,15 @@
 				6DD0DBAE2655D1D30025AF3C /* Event.swift in Sources */,
 				6DD0DBB22655D3B20025AF3C /* Array+Extension.swift in Sources */,
 				6D2E44382655BDD0004B98BC /* ViewController.swift in Sources */,
+				6DD0DBB9265716320025AF3C /* Segues.swift in Sources */,
 				6DD0DBA02655C0C00025AF3C /* EventsListViewController.swift in Sources */,
 				6DD0DBB02655D2BA0025AF3C /* EventsListViewModel.swift in Sources */,
 				6D2E44342655BDD0004B98BC /* AppDelegate.swift in Sources */,
+				6DD0DBB72657130F0025AF3C /* EventDetailViewController.swift in Sources */,
 				6DD0DBA52655CB270025AF3C /* UIImage+Extension.swift in Sources */,
 				6DD0DBA92655CF280025AF3C /* EventTableViewCell.swift in Sources */,
 				6D2E44362655BDD0004B98BC /* SceneDelegate.swift in Sources */,
+				6DD0DBB426570D570025AF3C /* EventsListWorker.swift in Sources */,
 				6DD0DBA32655C6290025AF3C /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

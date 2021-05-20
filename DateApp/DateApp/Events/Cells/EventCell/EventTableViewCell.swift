@@ -77,11 +77,9 @@ class EventTableViewCell: UITableViewCell {
 
     func set(event: Event) {
         eventImage.image = event.image
-        eventTitleLabel.text = event.title
-        locationLabel.text = event.location
-        let dateFomatter = DateFormatter()
-        dateFomatter.dateFormat = "E MMM d • HH:mm a"
-        dateLabel.text = dateFomatter.string(from: event.date)
+        eventTitleLabel.text = event.name
+        locationLabel.text = event.venue
+        dateLabel.text = event.formattedDate
     }
     
 }

@@ -28,4 +28,12 @@ extension UIImage {
     static var veganCafeteria: UIImage? {
         return UIImage(named: "veganCafeteria")
     }
+
+    static var clockIcon: UIImage? {
+        return UIImage(named: "clockIcon")
+    }
+
+    static var backArrowIcon: UIImage? {
+        return UIImage(named: "backArrowIcon")
+    }
 }

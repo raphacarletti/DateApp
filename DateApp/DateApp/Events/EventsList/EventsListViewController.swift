@@ -46,10 +46,24 @@ final class EventListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
+        viewModel.getEvents()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? EventDetailViewController else {
+            return
+        }
+
+        destination.event = viewModel.selectedEvent
     }
 }
 
-extension EventListViewController: UITableViewDelegate {}
+extension EventListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectEvent(indexPath: indexPath)
+        performSegue(withIdentifier: Segue.eventListToEventDetailScreen, sender: self)
+    }
+}
 
 extension EventListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

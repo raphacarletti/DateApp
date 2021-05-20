@@ -1,7 +1,13 @@
 import UIKit
 
 final class EventsListViewModel {
-    private var events: [Event] = [Event(image: .yogaClass, title: "Yoga Class", location: "Yoga class center", date: Date()), Event(image: .cafeteria, title: "Cafeteria", location: "Chelsea", date: Date()), Event(image: .veganCafeteria, title: "Vegan Cafeteira Opening", location: "Shoreditch", date: Date())]
+    private var events: [Event] = []
+    private(set) var selectedEvent: Event?
+    private let worker = EventsListWorker()
+
+    func getEvents() {
+        events = worker.getEvents()
+    }
 
     func numberOfRows() -> Int {
         return events.count
@@ -15,5 +21,9 @@ final class EventsListViewModel {
         }
         cell.set(event: event)
         return cell
+    }
+
+    func selectEvent(indexPath: IndexPath) {
+        selectedEvent = events[safe: indexPath.row]
     }
 }
