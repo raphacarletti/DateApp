@@ -69,13 +69,21 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iBp-oB-zbi">
+                                <rect key="frame" x="0.0" y="207" width="375" height="460"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aov-jO-vWt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="BL4-8e-6JY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iBp-oB-zbi" secondAttribute="trailing" id="PtH-Mr-FbL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iBp-oB-zbi" secondAttribute="bottom" id="QNe-Fj-wBQ"/>
                             <constraint firstItem="aov-jO-vWt" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="RJs-B0-YnE"/>
                             <constraint firstAttribute="trailing" secondItem="aov-jO-vWt" secondAttribute="trailing" constant="16" id="UNp-u9-jo1"/>
+                            <constraint firstItem="iBp-oB-zbi" firstAttribute="top" secondItem="aov-jO-vWt" secondAttribute="bottom" constant="8" id="uvl-B5-EWJ"/>
+                            <constraint firstItem="iBp-oB-zbi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wSZ-gk-UQS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EZQ-80-Ez4"/>
@@ -83,6 +91,7 @@
                         <outlet property="allAttendingSegmentedControl" destination="pX4-0c-h2s" id="q94-9S-Rlc"/>
                         <outlet property="eventSearchBar" destination="HBW-gY-Pyq" id="jRk-p4-LkY"/>
                         <outlet property="eventsSegmentControl" destination="cLk-3C-aJs" id="Pvh-qV-ihM"/>
+                        <outlet property="eventsTableView" destination="iBp-oB-zbi" id="j4R-KQ-gTi"/>
                         <outlet property="filterIconButton" destination="pLn-7w-qIv" id="R2G-iH-4MW"/>
                         <outlet property="separatorViewSegmentedControl" destination="D47-7H-H2T" id="ur2-9C-SLx"/>
                     </connections>

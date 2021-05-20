@@ -32,8 +32,31 @@ final class EventListViewController: UIViewController {
             allAttendingSegmentedControl.segments = LabelSegment.segments(withTitles: ["ALL", "ATTENDING"], normalBackgroundColor: .clear, normalFont: .systemFont(ofSize: 13, weight: .semibold), normalTextColor: .primaryColor, selectedBackgroundColor: .primaryColor, selectedFont: .systemFont(ofSize: 13, weight: .semibold), selectedTextColor: .white)
         }
     }
+    @IBOutlet weak var eventsTableView: UITableView! {
+        didSet {
+            eventsTableView.delegate = self
+            eventsTableView.dataSource = self
+            eventsTableView.separatorStyle = .none
+            eventsTableView.register(UINib(nibName: String(describing: EventTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: EventTableViewCell.self))
+        }
+    }
+
+    private let viewModel = EventsListViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+}
+
+extension EventListViewController: UITableViewDelegate {}
+
+extension EventListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows()
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return viewModel.cellForRow(tableView: tableView, indexPath: indexPath)
     }
 }
