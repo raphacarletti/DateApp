@@ -63,12 +63,41 @@ class EventDetailViewController: UIViewController {
             backButton.clipsToBounds = true
         }
     }
+    @IBOutlet weak var separatorView: UIView! {
+        didSet {
+            separatorView.backgroundColor = .primaryColor
+        }
+    }
+    @IBOutlet weak var directionButton: UIStackView! {
+        didSet {
+            directionButton.isUserInteractionEnabled = true
+        }
+    }
+    @IBOutlet weak var callVenueButton: UIStackView! {
+        didSet {
+            callVenueButton.isUserInteractionEnabled = true
+        }
+    }
+    @IBOutlet weak var visitWebsiteButton: UIStackView! {
+        didSet {
+            visitWebsiteButton.isUserInteractionEnabled = true
+        }
+    }
+    @IBOutlet weak var rsvpButton: UIButton!
+    @IBOutlet weak var sendInviteButton: UIButton!
 
     var event: Event?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         backButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(back)))
+        directionButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapDirectionsButton)))
+        callVenueButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapCallVenueButton)))
+        visitWebsiteButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapVisitWebsiteButton)))
+        setCustomization(button: rsvpButton)
+        setCustomization(button: sendInviteButton)
+
         setEventInfo()
     }
 
@@ -84,8 +113,35 @@ class EventDetailViewController: UIViewController {
         descriptionTextView.text = event.description
     }
 
+    func setCustomization(button: UIButton) {
+        button.layer.cornerRadius = 15
+        button.backgroundColor = .offWhite
+        button.setTitleColor(.mediumGray, for: .normal)
+
+        button.layer.shadowColor = UIColor.mediumGray.cgColor
+        button.layer.shadowOpacity = 0.5
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+        button.layer.shadowRadius = 1
+        button.layer.cornerRadius = 15
+    }
+
     @objc
     func back() {
         navigationController?.popViewController(animated: true)
+    }
+
+    @objc
+    func didTapDirectionsButton() {
+        ExternalLinksUtils.openGoogleMaps(with: event?.venue ?? "")
+    }
+
+    @objc
+    func didTapCallVenueButton() {
+        print("call")
+    }
+
+    @objc
+    func didTapVisitWebsiteButton() {
+        print("visit")
     }
 }

@@ -36,4 +36,8 @@ extension UIImage {
     static var backArrowIcon: UIImage? {
         return UIImage(named: "backArrowIcon")
     }
+
+    static var directionsIcon: UIImage? {
+        return UIImage(named: "directionsIcon")
+    }
 }
