@@ -105,7 +105,7 @@
         <!--Event Detail View Controller-->
         <scene sceneID="ina-V3-Nfw">
             <objects>
-                <viewController id="jCn-jz-nLL" customClass="EventDetailViewController" customModule="DateApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventDetailViewController" id="jCn-jz-nLL" customClass="EventDetailViewController" customModule="DateApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YJ6-kG-lHx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -428,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5q-cF-SIp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1885.5999999999999" y="101.64917541229386"/>
+            <point key="canvasLocation" x="2327" y="-58"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="80r-hX-tNs">
