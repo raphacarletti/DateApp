@@ -85,8 +85,37 @@ class EventDetailViewController: UIViewController {
     }
     @IBOutlet weak var rsvpButton: UIButton!
     @IBOutlet weak var sendInviteButton: UIButton!
+    @IBOutlet weak var aboutVenueHeader: UILabel! {
+        didSet {
+            aboutVenueHeader.textColor = .mediumGray
+            aboutVenueHeader.font = .systemFont(ofSize: 20)
+        }
+    }
+    @IBOutlet weak var aboutVenueTextView: UITextView! {
+        didSet {
+            aboutVenueTextView.textColor = .mediumGray
+            aboutVenueTextView.font = .systemFont(ofSize: 16, weight: .light)
+        }
+    }
+    @IBOutlet weak var moreEventsHeader: UILabel! {
+        didSet {
+            moreEventsHeader.textColor = .mediumGray
+            moreEventsHeader.font = .systemFont(ofSize: 20)
+        }
+    }
+    @IBOutlet weak var moreEventsCollectionView: UICollectionView! {
+        didSet {
+            let flowLayout = UICollectionViewFlowLayout()
+            flowLayout.scrollDirection = .horizontal
+            moreEventsCollectionView.collectionViewLayout = flowLayout
+            moreEventsCollectionView.delegate = self
+            moreEventsCollectionView.dataSource = self
+            moreEventsCollectionView.showsVerticalScrollIndicator = false
+            moreEventsCollectionView.register(UINib(nibName: String(describing: EventCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EventCollectionViewCell.self))
+        }
+    }
 
-    var event: Event?
+    let viewModel = EventDetailViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,7 +131,7 @@ class EventDetailViewController: UIViewController {
     }
 
     func setEventInfo() {
-        guard let event = event else {
+        guard let event = viewModel.event else {
             return
         }
 
@@ -125,6 +154,10 @@ class EventDetailViewController: UIViewController {
         button.layer.cornerRadius = 15
     }
 
+    func set(event: Event?) {
+        viewModel.set(event: event)
+    }
+
     @objc
     func back() {
         navigationController?.popViewController(animated: true)
@@ -132,7 +165,7 @@ class EventDetailViewController: UIViewController {
 
     @objc
     func didTapDirectionsButton() {
-        ExternalLinksUtils.openGoogleMaps(with: event?.venue ?? "")
+        ExternalLinksUtils.openGoogleMaps(with: viewModel.event?.venue ?? "")
     }
 
     @objc
@@ -143,5 +176,31 @@ class EventDetailViewController: UIViewController {
     @objc
     func didTapVisitWebsiteButton() {
         print("visit")
+    }
+}
+
+extension EventDetailViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+}
+
+extension EventDetailViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfItems()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return viewModel.cellForItem(collectionView: collectionView, indexPath: indexPath)
+    }
+}
+
+extension EventDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 343, height: 264.5)
     }
 }

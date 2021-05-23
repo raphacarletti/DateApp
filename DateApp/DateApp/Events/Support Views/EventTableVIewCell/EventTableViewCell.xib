@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="451" id="KGk-i7-Jjw" customClass="EventTableViewCell" customModule="DateApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="385" height="392"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="385" height="392"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvt-uV-kVj" customClass="EventSummaryView" customModule="DateApp" customModuleProvider="target">
+                        <rect key="frame" x="36" y="27" width="313" height="338"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fvt-uV-kVj" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="994-tC-bPB"/>
+                    <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="fvt-uV-kVj" secondAttribute="trailing" constant="16" id="BFZ-Ek-FpM"/>
+                    <constraint firstItem="fvt-uV-kVj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="hTu-8K-wWe"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="fvt-uV-kVj" secondAttribute="bottom" constant="16" id="nnR-N3-XJ0"/>
+                    <constraint firstItem="fvt-uV-kVj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="q8c-UI-wcI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="eventSummaryView" destination="fvt-uV-kVj" id="GQy-Lw-Qk7"/>
+            </connections>
+            <point key="canvasLocation" x="265.94202898550725" y="85.714285714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

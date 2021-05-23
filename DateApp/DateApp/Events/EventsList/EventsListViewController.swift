@@ -54,7 +54,7 @@ final class EventListViewController: UIViewController {
             return
         }
 
-        destination.event = viewModel.selectedEvent
+        destination.set(event: viewModel.selectedEvent)
     }
 }
 

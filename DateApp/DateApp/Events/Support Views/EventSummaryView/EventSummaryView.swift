@@ -1,20 +1,13 @@
-//
-//  EventTableViewCell.swift
-//  DateApp
-//
-//  Created by Raphael Carletti on 19/05/21.
-//
-
 import UIKit
 
-class EventTableViewCell: UITableViewCell {
+class EventSummaryView: CustomView {
     @IBOutlet weak var roundedView: UIView! {
         didSet {
             roundedView.backgroundColor = .offWhite
             roundedView.layer.shadowColor = UIColor.mediumGray.cgColor
-            roundedView.layer.shadowOpacity = 1
-            roundedView.layer.shadowOffset = .zero
-            roundedView.layer.shadowRadius = 5
+            roundedView.layer.shadowOpacity = 0.5
+            roundedView.layer.shadowOffset = CGSize(width: 0, height: 2)
+            roundedView.layer.shadowRadius = 2
             roundedView.layer.cornerRadius = 20
         }
     }
@@ -65,21 +58,10 @@ class EventTableViewCell: UITableViewCell {
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        backgroundColor = .clear
-        selectionStyle = .none
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
     func set(event: Event) {
         eventImage.image = event.image
         eventTitleLabel.text = event.name
         locationLabel.text = event.venue
         dateLabel.text = event.formattedDate
     }
-    
 }
