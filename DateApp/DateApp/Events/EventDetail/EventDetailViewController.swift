@@ -4,6 +4,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var eventImageView: UIImageView! {
         didSet {
             eventImageView.contentMode = .scaleAspectFill
+            ShapeLayerUtils.eventDetailCurvePath(in: eventImageView)
         }
     }
     @IBOutlet weak var eventNameLabel: UILabel! {
