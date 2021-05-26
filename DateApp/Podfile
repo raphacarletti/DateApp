@@ -6,6 +6,9 @@ target 'DateApp' do
   use_frameworks!
 
 pod 'BetterSegmentedControl', '~> 2.0'
+pod 'StreamChat', '~> 3.1'
+pod 'JGProgressHUD', '~> 2.2.0'
+ pod 'Kingfisher', '~> 6.0'
 
   # Pods for DateApp
 

@@ -1,16 +1,32 @@
 PODS:
   - BetterSegmentedControl (2.0.1)
+  - JGProgressHUD (2.2)
+  - Kingfisher (6.3.0)
+  - Starscream (4.0.4)
+  - StreamChat (3.1.10):
+    - Starscream (~> 4.0)
 
 DEPENDENCIES:
   - BetterSegmentedControl (~> 2.0)
+  - JGProgressHUD (~> 2.2.0)
+  - Kingfisher (~> 6.0)
+  - StreamChat (~> 3.1)
 
 SPEC REPOS:
   trunk:
     - BetterSegmentedControl
+    - JGProgressHUD
+    - Kingfisher
+    - Starscream
+    - StreamChat
 
 SPEC CHECKSUMS:
   BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  StreamChat: 2005e47f0321111173f75ab5d00879922bb7cccb
 
-PODFILE CHECKSUM: 39bdcedf4de2379dd82673a2a4950c591e236711
+PODFILE CHECKSUM: 813a2971afde433bad27a64899ed7fd9a95d2233
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1
