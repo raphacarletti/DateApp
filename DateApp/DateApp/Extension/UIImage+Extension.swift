@@ -40,4 +40,8 @@ extension UIImage {
     static var directionsIcon: UIImage? {
         return UIImage(named: "directionsIcon")
     }
+
+    static var calendarIcon: UIImage? {
+        return UIImage(named: "calendarIcon")
+    }
 }

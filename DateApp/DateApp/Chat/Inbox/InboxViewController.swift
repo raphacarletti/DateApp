@@ -22,8 +22,7 @@ class InboxViewController: UIViewController {
 
         }
         LoadingUtils.startLoading(in: view)
-        viewModel.getChannels { [weak self] in
-            guard let self = self else { return }
+        viewModel.getChannels {
             LoadingUtils.stopLoading()
         }
     }
@@ -46,6 +45,10 @@ extension InboxViewController: UITableViewDelegate {
             guard let self = self else { return }
             self.viewModel.pinAction(indexPath: indexPath)
         })])
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Segue.inboxToConvesationScreen, sender: self)
     }
 
 
