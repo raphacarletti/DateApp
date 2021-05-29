@@ -26,6 +26,17 @@ class InboxViewController: UIViewController {
             LoadingUtils.stopLoading()
         }
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let destination = segue.destination as? ConversationViewController,
+            let channelId = viewModel.selectedChannelId
+        else {
+            return
+        }
+
+        destination.set(channelId: channelId)
+    }
 }
 
 extension InboxViewController: UITableViewDelegate {
@@ -48,6 +59,7 @@ extension InboxViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.setSelectedChannelId(for: indexPath)
         performSegue(withIdentifier: Segue.inboxToConvesationScreen, sender: self)
     }
 

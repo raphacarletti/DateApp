@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatTextTableViewCell" rowHeight="111" id="KGk-i7-Jjw" customClass="ChatTextTableViewCell" customModule="DateApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amo-vj-6EV">
+                        <rect key="frame" x="16" y="4" width="216" height="103"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="auihaiuahiuhiau" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6h5-6V-iqj">
+                                <rect key="frame" x="8" y="8" width="200" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="n5X-iO-hoc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6h5-6V-iqj" firstAttribute="leading" secondItem="amo-vj-6EV" secondAttribute="leading" constant="8" id="60L-a4-ugP"/>
+                            <constraint firstItem="6h5-6V-iqj" firstAttribute="top" secondItem="amo-vj-6EV" secondAttribute="top" constant="8" id="63L-HE-O4w"/>
+                            <constraint firstAttribute="trailing" secondItem="6h5-6V-iqj" secondAttribute="trailing" constant="8" id="QVU-a1-pDx"/>
+                            <constraint firstAttribute="bottom" secondItem="6h5-6V-iqj" secondAttribute="bottom" constant="8" id="bmT-ch-BWL"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQV-xG-aId">
+                        <rect key="frame" x="272" y="39.5" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="BWw-lN-kLM"/>
+                            <constraint firstAttribute="width" constant="32" id="Sd7-Aj-g0N"/>
+                        </constraints>
+                        <state key="normal" image="heartIcon"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="amo-vj-6EV" secondAttribute="trailing" priority="750" constant="16" id="Kv9-28-LY4"/>
+                    <constraint firstAttribute="trailing" secondItem="amo-vj-6EV" secondAttribute="trailing" priority="250" constant="16" id="NhR-Co-bn8"/>
+                    <constraint firstItem="amo-vj-6EV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="V4F-N9-WBp"/>
+                    <constraint firstAttribute="bottom" secondItem="amo-vj-6EV" secondAttribute="bottom" constant="4" id="ith-or-wc0"/>
+                    <constraint firstAttribute="trailing" secondItem="eQV-xG-aId" secondAttribute="trailing" priority="250" constant="16" id="jpD-W6-ywI"/>
+                    <constraint firstItem="eQV-xG-aId" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mkA-cn-RVL"/>
+                    <constraint firstItem="amo-vj-6EV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="250" constant="16" id="ogW-0F-zbn"/>
+                    <constraint firstItem="amo-vj-6EV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="750" constant="16" id="uHy-gz-03v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="likeMessageButton" destination="eQV-xG-aId" id="xoS-VM-IfT"/>
+                <outlet property="roundedView" destination="amo-vj-6EV" id="1CT-DV-1HM"/>
+                <outlet property="roundedViewToLeadingEqualConstraint" destination="uHy-gz-03v" id="c56-Yw-WCM"/>
+                <outlet property="roundedViewToLeadingGreaterThenConstraint" destination="ogW-0F-zbn" id="lj8-Q4-KK9"/>
+                <outlet property="roundedViewToTrailingEqualConstraint" destination="NhR-Co-bn8" id="t8e-Kf-TKW"/>
+                <outlet property="roundedViewToTrailingGreaterThanConstraint" destination="Kv9-28-LY4" id="eJ9-g3-4FI"/>
+                <outlet property="textMessageLabel" destination="6h5-6V-iqj" id="tla-xY-Iqc"/>
+            </connections>
+            <point key="canvasLocation" x="81.159420289855078" y="-11.049107142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="heartIcon" width="32" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

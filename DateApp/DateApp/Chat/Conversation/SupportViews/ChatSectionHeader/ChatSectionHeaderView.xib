@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatSectionHeaderView" customModule="DateApp" customModuleProvider="target">
+            <connections>
+                <outlet property="dateTitleLabel" destination="4Gh-bx-OqG" id="NKd-nb-bpI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="57"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gh-bx-OqG">
+                    <rect key="frame" x="8" y="4" width="357" height="49"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4Gh-bx-OqG" secondAttribute="bottom" constant="4" id="am0-OE-Hqs"/>
+                <constraint firstItem="4Gh-bx-OqG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="kL1-es-nAu"/>
+                <constraint firstItem="4Gh-bx-OqG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="pNZ-JV-tQc"/>
+                <constraint firstAttribute="trailing" secondItem="4Gh-bx-OqG" secondAttribute="trailing" constant="8" id="tDU-PT-v3h"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="107.97101449275362" y="-203.23660714285714"/>
+        </view>
+    </objects>
+</document>

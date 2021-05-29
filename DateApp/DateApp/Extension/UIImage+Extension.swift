@@ -44,4 +44,12 @@ extension UIImage {
     static var calendarIcon: UIImage? {
         return UIImage(named: "calendarIcon")
     }
+
+    static var heartIcon: UIImage? {
+        return UIImage(named: "heartIcon")
+    }
+
+    static var heartFulfilledIcon: UIImage? {
+        return UIImage(named: "heartFulfilledIcon")
+    }
 }

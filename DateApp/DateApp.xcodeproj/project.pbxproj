@@ -48,6 +48,12 @@
 		6DD0DBCA265864F40025AF3C /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD0DBC8265864F40025AF3C /* EventCollectionViewCell.xib */; };
 		6DD0DBCC265B05950025AF3C /* EventDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0DBCB265B05950025AF3C /* EventDetailWorker.swift */; };
 		6DD0DBCE265B09D90025AF3C /* ShapeLayerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0DBCD265B09D90025AF3C /* ShapeLayerUtils.swift */; };
+		6DF3E72326610A140087E88F /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF3E72226610A140087E88F /* ConversationViewModel.swift */; };
+		6DF3E72526610ADA0087E88F /* ConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF3E72426610ADA0087E88F /* ConversationController.swift */; };
+		6DF3E72A266115A00087E88F /* ChatTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF3E728266115A00087E88F /* ChatTextTableViewCell.swift */; };
+		6DF3E72B266115A00087E88F /* ChatTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF3E729266115A00087E88F /* ChatTextTableViewCell.xib */; };
+		6DF9BA112661B12D00803C7F /* ChatSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9BA102661B12D00803C7F /* ChatSectionHeaderView.swift */; };
+		6DF9BA132661B14500803C7F /* ChatSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9BA122661B14500803C7F /* ChatSectionHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +101,12 @@
 		6DD0DBC8265864F40025AF3C /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		6DD0DBCB265B05950025AF3C /* EventDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailWorker.swift; sourceTree = "<group>"; };
 		6DD0DBCD265B09D90025AF3C /* ShapeLayerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeLayerUtils.swift; sourceTree = "<group>"; };
+		6DF3E72226610A140087E88F /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		6DF3E72426610ADA0087E88F /* ConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationController.swift; sourceTree = "<group>"; };
+		6DF3E728266115A00087E88F /* ChatTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextTableViewCell.swift; sourceTree = "<group>"; };
+		6DF3E729266115A00087E88F /* ChatTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTextTableViewCell.xib; sourceTree = "<group>"; };
+		6DF9BA102661B12D00803C7F /* ChatSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSectionHeaderView.swift; sourceTree = "<group>"; };
+		6DF9BA122661B14500803C7F /* ChatSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatSectionHeaderView.xib; sourceTree = "<group>"; };
 		DA454E6BF599AECEEF44070C /* Pods-DateApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DateApp.release.xcconfig"; path = "Target Support Files/Pods-DateApp/Pods-DateApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,7 +238,10 @@
 		6DAA32B5265F12A800D74337 /* Conversation */ = {
 			isa = PBXGroup;
 			children = (
+				6DF3E726266115850087E88F /* SupportViews */,
 				6DAA32B6265F12BD00D74337 /* ConversationViewController.swift */,
+				6DF3E72226610A140087E88F /* ConversationViewModel.swift */,
+				6DF3E72426610ADA0087E88F /* ConversationController.swift */,
 			);
 			path = Conversation;
 			sourceTree = "<group>";
@@ -320,6 +335,33 @@
 			path = EventCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		6DF3E726266115850087E88F /* SupportViews */ = {
+			isa = PBXGroup;
+			children = (
+				6DF9BA0F2661B11400803C7F /* ChatSectionHeader */,
+				6DF3E7272661158B0087E88F /* ChatTextCell */,
+			);
+			path = SupportViews;
+			sourceTree = "<group>";
+		};
+		6DF3E7272661158B0087E88F /* ChatTextCell */ = {
+			isa = PBXGroup;
+			children = (
+				6DF3E728266115A00087E88F /* ChatTextTableViewCell.swift */,
+				6DF3E729266115A00087E88F /* ChatTextTableViewCell.xib */,
+			);
+			path = ChatTextCell;
+			sourceTree = "<group>";
+		};
+		6DF9BA0F2661B11400803C7F /* ChatSectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				6DF9BA102661B12D00803C7F /* ChatSectionHeaderView.swift */,
+				6DF9BA122661B14500803C7F /* ChatSectionHeaderView.xib */,
+			);
+			path = ChatSectionHeader;
+			sourceTree = "<group>";
+		};
 		892FB463014B4308F2687D02 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,10 +436,12 @@
 				6D2E44402655BDD1004B98BC /* LaunchScreen.storyboard in Resources */,
 				6DD0DBC3265852BB0025AF3C /* EventSummaryView.xib in Resources */,
 				6DAA32AE265C55FF00D74337 /* InboxChatTableViewCell.xib in Resources */,
+				6DF3E72B266115A00087E88F /* ChatTextTableViewCell.xib in Resources */,
 				6DAA32A7265C535200D74337 /* InboxSectionView.xib in Resources */,
 				6D2E44492655BE31004B98BC /* Events.storyboard in Resources */,
 				6D2E443D2655BDD1004B98BC /* Assets.xcassets in Resources */,
 				6DAA329B265C4F0800D74337 /* Chat.storyboard in Resources */,
+				6DF9BA132661B14500803C7F /* ChatSectionHeaderView.xib in Resources */,
 				6DD0DBCA265864F40025AF3C /* EventCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +504,7 @@
 				6DD0DBB9265716320025AF3C /* Segues.swift in Sources */,
 				6DAA32B7265F12BD00D74337 /* ConversationViewController.swift in Sources */,
 				6DD0DBA02655C0C00025AF3C /* EventsListViewController.swift in Sources */,
+				6DF3E72526610ADA0087E88F /* ConversationController.swift in Sources */,
 				6D28F390265B2643006A2FC6 /* ChatClient.swift in Sources */,
 				6DD0DBB02655D2BA0025AF3C /* EventsListViewModel.swift in Sources */,
 				6DAA32A2265C50EC00D74337 /* MessageHeaderView.swift in Sources */,
@@ -474,11 +519,14 @@
 				6DD0DBCC265B05950025AF3C /* EventDetailWorker.swift in Sources */,
 				6DAA32A9265C536000D74337 /* InboxSectionView.swift in Sources */,
 				6D2E44362655BDD0004B98BC /* SceneDelegate.swift in Sources */,
+				6DF9BA112661B12D00803C7F /* ChatSectionHeaderView.swift in Sources */,
 				6DD0DBC9265864F40025AF3C /* EventCollectionViewCell.swift in Sources */,
 				6DD0DBC1265852B10025AF3C /* EventSummaryView.swift in Sources */,
+				6DF3E72326610A140087E88F /* ConversationViewModel.swift in Sources */,
 				6DD0DBB426570D570025AF3C /* EventsListWorker.swift in Sources */,
 				6DAA32B2265DC04200D74337 /* InboxViewModel.swift in Sources */,
 				6DD0DBA32655C6290025AF3C /* UIColor+Extension.swift in Sources */,
+				6DF3E72A266115A00087E88F /* ChatTextTableViewCell.swift in Sources */,
 				6DD0DBBE265850C20025AF3C /* EventDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

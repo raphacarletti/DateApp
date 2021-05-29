@@ -19,7 +19,21 @@ final class InboxViewModel {
         }
     }
 
+    private(set) var selectedChannelId: ChannelId?
+
     var reloadTable: (() -> ())?
+
+    func setSelectedChannelId(for indexPath: IndexPath) {
+        let channelId: ChannelId
+        if indexPath.section == 0 {
+            guard let chat = pinnedChats[safe: indexPath.row] else { return }
+            channelId = chat.cid
+        } else {
+            guard let chat = otherChats[safe: indexPath.row] else { return }
+            channelId = chat.cid
+        }
+        selectedChannelId = channelId
+    }
 
 
     func getChannels(completion: @escaping () -> Void) {

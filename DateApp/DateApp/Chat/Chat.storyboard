@@ -211,22 +211,31 @@
                                     <constraint firstAttribute="trailing" secondItem="Zxh-gi-8jF" secondAttribute="trailing" constant="32" id="rA0-LQ-6xt"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-Az-EUD">
+                                <rect key="frame" x="0.0" y="188.5" width="375" height="398.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2q5-oA-wqP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2q5-oA-wqP" firstAttribute="trailing" secondItem="Lxh-8S-iKg" secondAttribute="trailing" id="3gP-Qg-6st"/>
                             <constraint firstItem="Lxh-8S-iKg" firstAttribute="top" secondItem="2q5-oA-wqP" secondAttribute="top" id="7g8-Pa-dGQ"/>
+                            <constraint firstItem="2q5-oA-wqP" firstAttribute="trailing" secondItem="Fou-Az-EUD" secondAttribute="trailing" id="E2b-UU-dN7"/>
+                            <constraint firstItem="Fou-Az-EUD" firstAttribute="top" secondItem="Lxh-8S-iKg" secondAttribute="bottom" id="LDy-hd-ycV"/>
+                            <constraint firstItem="G5h-vr-ovd" firstAttribute="top" secondItem="Fou-Az-EUD" secondAttribute="bottom" id="SVp-qb-qkG"/>
                             <constraint firstItem="2q5-oA-wqP" firstAttribute="trailing" secondItem="G5h-vr-ovd" secondAttribute="trailing" id="UWm-9c-S5U"/>
                             <constraint firstItem="G5h-vr-ovd" firstAttribute="leading" secondItem="2q5-oA-wqP" secondAttribute="leading" id="V8f-UG-zmb"/>
                             <constraint firstItem="Lxh-8S-iKg" firstAttribute="leading" secondItem="2q5-oA-wqP" secondAttribute="leading" id="cgu-5m-8PG"/>
                             <constraint firstItem="2q5-oA-wqP" firstAttribute="bottom" secondItem="G5h-vr-ovd" secondAttribute="bottom" id="dVh-iB-Z6P"/>
+                            <constraint firstItem="Fou-Az-EUD" firstAttribute="leading" secondItem="2q5-oA-wqP" secondAttribute="leading" id="mwp-Lw-UTG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="blt-vv-hwL"/>
                     <connections>
                         <outlet property="backButton" destination="RUL-gL-9m2" id="09W-0A-QLl"/>
                         <outlet property="conversationOptionsButton" destination="Zxh-gi-8jF" id="7WT-aB-pw6"/>
+                        <outlet property="conversationTableView" destination="Fou-Az-EUD" id="UbB-jq-6Iu"/>
                         <outlet property="headerView" destination="Lxh-8S-iKg" id="yB4-yD-fAl"/>
                         <outlet property="messageTextView" destination="Xfm-c3-WwB" id="hsM-4Q-F0I"/>
                         <outlet property="messageView" destination="G5h-vr-ovd" id="n0X-2o-HIs"/>

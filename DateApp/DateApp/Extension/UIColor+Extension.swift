@@ -9,6 +9,10 @@ extension UIColor {
         return UIColor(hexString: "#f5f5f5")
     }
 
+    static var lighterGray: UIColor {
+        return UIColor(hexString: "#e8e8e8")
+    }
+
     static var mediumGray: UIColor {
         return UIColor(hexString: "#8b909f")
     }

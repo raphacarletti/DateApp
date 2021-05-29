@@ -1,4 +1,5 @@
 import UIKit
+import StreamChat
 
 final class ConversationViewController: UIViewController {
     @IBOutlet weak var headerView: UIView! {
@@ -53,6 +54,7 @@ final class ConversationViewController: UIViewController {
             messageTextView.textColor = .lightGray
             messageTextView.layer.cornerRadius = 15
             messageTextView.clipsToBounds = true
+            messageTextView.returnKeyType = .send
         }
     }
     @IBOutlet weak var moreOptionsButton: UIButton! {
@@ -64,6 +66,16 @@ final class ConversationViewController: UIViewController {
             moreOptionsButton.addTarget(self, action: #selector(didTapMoreOptionsButton), for: .touchUpInside)
         }
     }
+    @IBOutlet weak var conversationTableView: UITableView! {
+        didSet {
+            conversationTableView.delegate = self
+            conversationTableView.dataSource = self
+            conversationTableView.transform = CGAffineTransform(rotationAngle: .pi)
+            conversationTableView.register(UINib(nibName: String(describing: ChatTextTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ChatTextTableViewCell.self))
+            conversationTableView.separatorStyle = .none
+            conversationTableView.backgroundColor = .offWhite
+        }
+    }
     @IBOutlet weak var moreButtonsStackView: UIStackView!
     @IBOutlet weak var shareButton: UIStackView!
     @IBOutlet weak var spinButton: UIStackView!
@@ -73,12 +85,31 @@ final class ConversationViewController: UIViewController {
 
     private var isMoreOptionsActive: Bool = false
 
+    private var viewModel: ConversationViewModel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         setMessageViewLayout()
+        setHeaderView()
         backButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapBackButton)))
+        LoadingUtils.startLoading(in: view)
+        viewModel?.getMessages(completion: { [weak self] error in
+            guard let self = self else { return }
+            if error != nil {
+                self.showErrorToLoadMessagesAlert()
+            } else {
+                self.conversationTableView.reloadData()
+            }
+            LoadingUtils.stopLoading()
+        })
+        
+    }
+
+    func setHeaderView() {
+        nameLabel.text = viewModel?.getChannelName()
+        photoImageView.kf.setImage(with: viewModel?.getPhotoImageUrl())
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -87,6 +118,12 @@ final class ConversationViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+
+    func set(channelId: ChannelId) {
+        let controller = ConversationController(channelId: channelId)
+        controller.delegate = self
+        viewModel = ConversationViewModel(controller: controller)
     }
 
     @objc
@@ -125,10 +162,24 @@ final class ConversationViewController: UIViewController {
             moreButtonsStackView.isHidden = true
         }
     }
+
+    func showErrorToLoadMessagesAlert() {
+        let alert = UIAlertController(title: "Failed to Load Messages", message: "Try again later...", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default) { [weak self] action in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension ConversationViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            viewModel?.sendMessage(text: textView.text)
+            return false
+        }
+
         if textView.text == "Send message..." {
             textView.text = text
             textView.textColor = .black
@@ -145,5 +196,45 @@ extension ConversationViewController: UITextViewDelegate {
         }
 
         return false
+    }
+}
+
+extension ConversationViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = ChatSectionHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
+        view.backgroundColor = .offWhite
+        view.set(text: viewModel?.getHeaderText(for: section) ?? "")
+        view.transform = CGAffineTransform(rotationAngle: .pi)
+        return view
+    }
+}
+
+extension ConversationViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel?.numberOfSections() ?? 0
+    }
+
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.numberOfRows(in: section) ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return viewModel?.cellForRow(tableView: tableView, indexPath: indexPath) ?? UITableViewCell()
+    }
+}
+
+extension ConversationViewController: ConversationControllerDelegate {
+    func didUpdateRow(at indexPath: IndexPath) {
+        conversationTableView.beginUpdates()
+        conversationTableView.reloadRows(at: [indexPath], with: .automatic)
+        conversationTableView.endUpdates()
+    }
+
+    func didInsertRow(at indexPath: IndexPath) {
+        conversationTableView.beginUpdates()
+        conversationTableView.insertRows(at: [indexPath], with: .automatic)
+        conversationTableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+        conversationTableView.endUpdates()
     }
 }
