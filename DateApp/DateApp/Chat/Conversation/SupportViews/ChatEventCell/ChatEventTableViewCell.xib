@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatEventTableViewCell" rowHeight="274" id="KGk-i7-Jjw" customClass="ChatEventTableViewCell" customModule="DateApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="440" height="274"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="440" height="274"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6td-SN-Mc4">
+                        <rect key="frame" x="16" y="8" width="250" height="258"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4aK-O8-Weu" customClass="EventSummaryView" customModule="DateApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="16" width="218" height="226"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4aK-O8-Weu" secondAttribute="bottom" constant="16" id="0QA-Hz-rhP"/>
+                            <constraint firstAttribute="trailing" secondItem="4aK-O8-Weu" secondAttribute="trailing" constant="16" id="1hc-Fg-qGl"/>
+                            <constraint firstAttribute="width" constant="250" id="Bnb-pL-lt4"/>
+                            <constraint firstItem="4aK-O8-Weu" firstAttribute="top" secondItem="6td-SN-Mc4" secondAttribute="top" constant="16" id="Vq5-BQ-Pv6"/>
+                            <constraint firstItem="4aK-O8-Weu" firstAttribute="leading" secondItem="6td-SN-Mc4" secondAttribute="leading" constant="16" id="bAQ-dG-KNK"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6td-SN-Mc4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="250" constant="16" id="28Y-kb-BAs"/>
+                    <constraint firstAttribute="bottom" secondItem="6td-SN-Mc4" secondAttribute="bottom" constant="8" id="7dj-JP-fd0"/>
+                    <constraint firstItem="6td-SN-Mc4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="750" constant="16" id="OiM-fv-qHo"/>
+                    <constraint firstItem="6td-SN-Mc4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="XLT-6X-Jd7"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6td-SN-Mc4" secondAttribute="trailing" priority="750" constant="16" id="aiv-Qn-fO5"/>
+                    <constraint firstAttribute="trailing" secondItem="6td-SN-Mc4" secondAttribute="trailing" priority="250" constant="16" id="kWi-Dq-932"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="eventSummaryView" destination="4aK-O8-Weu" id="mYj-9f-0db"/>
+                <outlet property="roundedView" destination="6td-SN-Mc4" id="3Nu-gv-JzL"/>
+                <outlet property="roundedViewLeadingEqualConstraint" destination="OiM-fv-qHo" id="9oh-nH-mDy"/>
+                <outlet property="roundedViewLeadingGreaterThanConstraint" destination="28Y-kb-BAs" id="EbT-Lc-B88"/>
+                <outlet property="roundedViewTrailingEqualConstraint" destination="kWi-Dq-932" id="Uia-kt-waj"/>
+                <outlet property="roundedViewTrailingGreaterThanConstraint" destination="aiv-Qn-fO5" id="5wz-5R-VQr"/>
+            </connections>
+            <point key="canvasLocation" x="-60.869565217391312" y="38.839285714285715"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

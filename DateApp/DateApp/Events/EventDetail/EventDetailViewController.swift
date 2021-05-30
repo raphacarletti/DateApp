@@ -137,7 +137,7 @@ class EventDetailViewController: UIViewController {
             return
         }
 
-        eventImageView.image = event.image
+        eventImageView.kf.setImage(with: URL(string: event.imgUrl))
         eventNameLabel.text = event.name
         startTimeLabel.text = event.formattedDate
         locationLabel.text = event.venue

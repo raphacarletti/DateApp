@@ -72,6 +72,7 @@ final class ConversationViewController: UIViewController {
             conversationTableView.dataSource = self
             conversationTableView.transform = CGAffineTransform(rotationAngle: .pi)
             conversationTableView.register(UINib(nibName: String(describing: ChatTextTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ChatTextTableViewCell.self))
+            conversationTableView.register(UINib(nibName: String(describing: ChatEventTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ChatEventTableViewCell.self))
             conversationTableView.separatorStyle = .none
             conversationTableView.backgroundColor = .offWhite
         }
@@ -124,6 +125,7 @@ final class ConversationViewController: UIViewController {
         let controller = ConversationController(channelId: channelId)
         controller.delegate = self
         viewModel = ConversationViewModel(controller: controller)
+        viewModel?.delegate = self
     }
 
     @objc
@@ -171,12 +173,29 @@ final class ConversationViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+
+    func sendMessage(text: String) {
+        viewModel?.sendMessage(text: messageTextView.text)
+        messageTextView.text = "Send message..."
+        messageTextView.textColor = .lightGray
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let destination = segue.destination as? EventDetailViewController,
+            let event = viewModel?.eventToShow
+        else {
+            return
+        }
+
+        destination.set(event: event)
+    }
 }
 
 extension ConversationViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n") {
-            viewModel?.sendMessage(text: textView.text)
+            sendMessage(text: textView.text)
             return false
         }
 
@@ -234,7 +253,13 @@ extension ConversationViewController: ConversationControllerDelegate {
     func didInsertRow(at indexPath: IndexPath) {
         conversationTableView.beginUpdates()
         conversationTableView.insertRows(at: [indexPath], with: .automatic)
-        conversationTableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
         conversationTableView.endUpdates()
+        conversationTableView.reloadSections(IndexSet(arrayLiteral: indexPath.section), with: .automatic)
+    }
+}
+
+extension ConversationViewController: ConversationViewModelDelegate {
+    func showEvent() {
+        performSegue(withIdentifier: Segue.conversationToEventSegue, sender: nil)
     }
 }

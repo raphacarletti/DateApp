@@ -2,9 +2,9 @@ import Foundation
 import StreamChat
 
 final class InboxViewModel {
-    private var channels: LazyCachedMapCollection<_ChatChannel<NoExtraData>> = []
     private var pinnedChatIds = UserDefaultUtils().getPinnedMessages()
     private var pinnedChats: LazyCachedMapCollection<_ChatChannel<NoExtraData>> {
+        guard let channels = Chat.shared.channelListController?.channels else { return [] }
         return channels.filter {
             return pinnedChatIds.contains($0.cid.id)
         }.lazyCachedMap { channel in
@@ -12,6 +12,7 @@ final class InboxViewModel {
         }
     }
     private var otherChats: LazyCachedMapCollection<_ChatChannel<NoExtraData>> {
+        guard let channels = Chat.shared.channelListController?.channels else { return [] }
         return channels.filter {
             return !pinnedChatIds.contains($0.cid.id)
         }.lazyCachedMap { channel in
@@ -37,10 +38,11 @@ final class InboxViewModel {
 
 
     func getChannels(completion: @escaping () -> Void) {
-        Chat.shared.getChannels { [weak self] channelsResponse in
+        Chat.shared.getChannels { [weak self] error in
             guard let self = self else { return }
-            self.channels = channelsResponse
-            self.reloadTable?()
+            if error == nil {
+                self.reloadTable?()
+            }
             completion()
         }
     }
@@ -54,7 +56,13 @@ final class InboxViewModel {
     }
 
     func cellForRow(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: InboxChatTableViewCell.self), for: indexPath) as? InboxChatTableViewCell, let channel = channels[safe: indexPath.row] else {
+        let channel: ChatChannel
+        if indexPath.section == 0 {
+            channel = pinnedChats[indexPath.row]
+        } else {
+            channel = otherChats[indexPath.row]
+        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: InboxChatTableViewCell.self), for: indexPath) as? InboxChatTableViewCell else {
             return UITableViewCell()
         }
         cell.set(with: channel)

@@ -1,8 +1,14 @@
 import UIKit
 import StreamChat
 
+protocol ConversationViewModelDelegate: AnyObject {
+    func showEvent()
+}
+
 final class ConversationViewModel {
     let controller: ConversationController
+    weak var delegate: ConversationViewModelDelegate? = nil
+    private(set) var eventToShow: Event?
 
     init(controller: ConversationController) {
         self.controller = controller
@@ -46,16 +52,28 @@ final class ConversationViewModel {
     }
 
     func cellForRow(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ChatTextTableViewCell.self), for: indexPath) as? ChatTextTableViewCell,
-            let message = controller.orderedChatMessages[safe: indexPath.section]?[safe: indexPath.row]
-        else {
-            return UITableViewCell()
+        guard let message = controller.orderedChatMessages[safe: indexPath.section]?[safe: indexPath.row] else { return UITableViewCell() }
+        if message.attachments.contains(where: { $0.type == .custom("event") }) {
+            guard
+                let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ChatEventTableViewCell.self), for: indexPath) as? ChatEventTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            cell.transform = CGAffineTransform(rotationAngle: .pi)
+            cell.delegate = self
+            cell.set(message: message)
+            return cell
+        } else {
+            guard
+                let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ChatTextTableViewCell.self), for: indexPath) as? ChatTextTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            cell.transform = CGAffineTransform(rotationAngle: .pi)
+            cell.delegate = self
+            cell.set(message: message, isLastMessage: indexPath.row == 0 && indexPath.section == 0, lastReadAt: controller.getOtherPersonLastReadAt())
+            return cell
         }
-        cell.transform = CGAffineTransform(rotationAngle: .pi)
-        cell.delegate = self
-        cell.set(message: message)
-        return cell
     }
 }
 
@@ -66,5 +84,12 @@ extension ConversationViewModel: ChatTextTableViewCellDelegate {
 
     func unlikeMessage(messageId: MessageId) {
         controller.unlikeMessage(messageId: messageId)
+    }
+}
+
+extension ConversationViewModel: ChatEventTableViewCellDelegate {
+    func didTapEventCell(event: Event) {
+        eventToShow = event
+        delegate?.showEvent()
     }
 }

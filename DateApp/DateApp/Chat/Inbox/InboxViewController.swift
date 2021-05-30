@@ -16,6 +16,7 @@ class InboxViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
+        NotificationCenter.default.addObserver(self, selector: #selector(channelUpdated), name: .channelUpdated, object: nil)
         viewModel.reloadTable = { [weak self] in
             guard let self = self else { return }
             self.tableView.reloadData()
@@ -36,6 +37,11 @@ class InboxViewController: UIViewController {
         }
 
         destination.set(channelId: channelId)
+    }
+
+    @objc
+    func channelUpdated() {
+        tableView.reloadData()
     }
 }
 

@@ -5,6 +5,7 @@ class Chat {
     static let shared = Chat()
     var client: ChatClient?
     private var isConnected = false
+    private(set) var channelListController: ChatChannelListController?
     var currentUserId: String {
         return client?.currentUserId ?? ""
     }
@@ -32,22 +33,19 @@ class Chat {
         })
     }
 
-    func getChannels(completion: @escaping (LazyCachedMapCollection<_ChatChannel<NoExtraData>>) -> Void) {
+    func getChannels(completion: @escaping (Error?) -> Void) {
         if isConnected {
-            guard let controller = client?.channelListController(
+            channelListController = client?.channelListController(
                 query: .init(
                     filter: .and([.equal(.type, to: .messaging), .containMembers(userIds: [client?.currentUserId ?? ""])]),
                     sort: [.init(key: .lastMessageAt, isAscending: false)],
                     messagesLimit: 1
-                )
-            ) else {
-                return
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                controller.synchronize { error in
-                    if error == nil {
-                        completion(controller.channels)
-                    }
+                ))
+            channelListController?.delegate = self
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+                guard let self = self else { return }
+                self.channelListController?.synchronize { error in
+                    completion(error)
                 }
             }
         } else {
@@ -59,4 +57,19 @@ class Chat {
     }
 
 
+}
+
+extension Chat: ChatChannelListControllerDelegate {
+    func controller(_ controller: ChatChannelListController, didChangeChannels changes: [ListChange<ChatChannel>]) {
+        for change in changes {
+            switch change {
+            case let .insert(channel, index: _):
+                NotificationCenter.default.post(name: .channelUpdated, object: nil, userInfo: ["channel": channel])
+            case let .update(channel, index: _):
+                NotificationCenter.default.post(name: .channelUpdated, object: nil, userInfo: ["channel": channel])
+            default:
+                break
+            }
+        }
+    }
 }

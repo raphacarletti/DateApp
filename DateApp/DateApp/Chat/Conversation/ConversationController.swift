@@ -34,7 +34,6 @@ final class ConversationController {
     init(channelId: ChannelId) {
         self.channelId = channelId
         self.channelController = chatClient?.channelController(for: channelId)
-        self.channelController?.delegate = self
     }
 
     func getChannelName() -> String {
@@ -52,7 +51,12 @@ final class ConversationController {
     }
 
     func getMessages(completion: @escaping (Error?) -> Void) {
-        channelController?.loadPreviousMessages(before: channelController?.messages.first?.id) {error in
+        channelController?.loadPreviousMessages(before: channelController?.messages.first?.id) { [weak self] error in
+            guard let self = self else { return }
+            if error == nil {
+                self.channelController?.markRead()
+                self.channelController?.delegate = self
+            }
             completion(error)
         }
     }
@@ -61,12 +65,25 @@ final class ConversationController {
         channelController?.createNewMessage(text: text)
     }
 
+    func sendEventMessage() {
+        let dateFormatter = ISO8601DateFormatter()
+        let event = Event(name: "Cafeteria", startTime: dateFormatter.string(from: Date()), url: "", venue: "Chelsea", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu commodo enim, dignissim fringilla lectus. Phasellus condimentum euismod justo, in sodales nulla efficitur quis. In enim metus, euismod tincidunt tortor vel, dignissim tempus odio. Quisque vestibulum lacus nunc, sit amet iaculis nulla placerat vel. Vivamus a egestas dolor. Curabitur vulputate.", imgUrl: "https://colunadogilson.com.br/cac/wp-content/uploads/cafeteria.jpg", endTime: "", id: 1, status: "")
+        let attachment = EventAttachment(event: event)
+        channelController?.createNewMessage(text: "", attachments: [attachment])
+    }
+
     func likeMessage(messageId: MessageId) {
         chatClient?.messageController(cid: channelId, messageId: messageId).addReaction("like")
     }
 
     func unlikeMessage(messageId: MessageId) {
         chatClient?.messageController(cid: channelId, messageId: messageId).deleteReaction("like")
+    }
+
+    func getOtherPersonLastReadAt() -> Date {
+        return channelController?.channel?.reads.filter({
+            $0.user.name != Chat.shared.currentUserName
+        }).first?.lastReadAt ?? Date()
     }
 }
 
@@ -86,6 +103,7 @@ extension ConversationController: ChatChannelControllerDelegate {
                 }
                 let indexPath = IndexPath(row: row, section: section)
                 delegate?.didInsertRow(at: indexPath)
+                channelController.markRead()
             case let .update(message, index: _):
                 var section: Int = 0
                 var row: Int = 0

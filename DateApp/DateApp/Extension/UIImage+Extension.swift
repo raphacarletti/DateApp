@@ -52,4 +52,8 @@ extension UIImage {
     static var heartFulfilledIcon: UIImage? {
         return UIImage(named: "heartFulfilledIcon")
     }
+
+    static var doubleCheckmarkIcon: UIImage? {
+        return UIImage(named: "doubleCheckmarkIcon")
+    }
 }

@@ -249,11 +249,22 @@
                         <outlet property="roundedView" destination="Isn-3a-zA5" id="ofT-i4-X5J"/>
                         <outlet property="shareButton" destination="Ins-YT-fZU" id="y7c-oE-fLs"/>
                         <outlet property="spinButton" destination="RR8-38-PUf" id="d6E-4Q-ZIB"/>
+                        <segue destination="78h-Ih-v2k" kind="show" identifier="conversationToEventSegue" id="Ifs-ZN-is9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3QO-Xj-fEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1884" y="107.49625187406298"/>
+        </scene>
+        <!--EventDetailViewController-->
+        <scene sceneID="1al-3D-kAC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Events" referencedIdentifier="EventDetailViewController" id="78h-Ih-v2k" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Meb-D6-OYj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5IN-4M-Ujs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2590" y="59"/>
         </scene>
         <!--Chat-->
         <scene sceneID="XZX-Ws-k5v">

@@ -59,7 +59,7 @@ class EventSummaryView: CustomView {
     }
 
     func set(event: Event) {
-        eventImage.image = event.image
+        eventImage.kf.setImage(with: URL(string: event.imgUrl))
         eventTitleLabel.text = event.name
         locationLabel.text = event.venue
         dateLabel.text = event.formattedDate

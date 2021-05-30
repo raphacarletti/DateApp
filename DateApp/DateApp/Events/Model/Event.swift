@@ -1,7 +1,6 @@
 import UIKit
 
-struct Event {
-    let image: UIImage?
+struct Event: Codable {
     let name: String
     let startTime: String
     let url: String
