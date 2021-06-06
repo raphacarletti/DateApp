@@ -17,6 +17,8 @@ final class ConversationViewController: UIViewController {
         didSet {
             conversationOptionsButton.layer.cornerRadius = 25
             conversationOptionsButton.clipsToBounds = true
+            conversationOptionsButton.isUserInteractionEnabled = true
+            conversationOptionsButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapConversationOptionsButton)))
         }
     }
     @IBOutlet weak var nameLabel: UILabel! {
@@ -149,6 +151,11 @@ final class ConversationViewController: UIViewController {
     @objc
     func keyboardWillHide(_ notification: Notification) {
         messageViewToBottomConstraint.constant = 0
+    }
+
+    @objc
+    func didTapConversationOptionsButton() {
+        performSegue(withIdentifier: Segue.presentChatMoreOption, sender: nil)
     }
 
     func setMessageViewLayout() {

@@ -4,4 +4,5 @@ struct Segue {
     static let eventListToEventDetailScreen = "eventListToEventDetailScreen"
     static let inboxToConvesationScreen = "inboxToConvesationScreen"
     static let conversationToEventSegue = "conversationToEventSegue"
+    static let presentChatMoreOption = "presentChatMoreOption"
 }
