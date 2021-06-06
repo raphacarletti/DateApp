@@ -56,12 +56,11 @@ extension InboxViewController: UITableViewDelegate {
         return view
     }
 
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let title = indexPath.section == 0 ? "Unpin" : "Pin"
-        return UISwipeActionsConfiguration(actions: [UIContextualAction(style: .normal, title: title, handler: { [weak self] action, view, completion in
-            guard let self = self else { return }
-            self.viewModel.pinAction(indexPath: indexPath)
-        })])
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let configuration = UISwipeActionsConfiguration(actions: [viewModel.reportSwipeAction(), viewModel.unmatchSwipeAction(), viewModel.pinSwipeAction(indexPath: indexPath)])
+        configuration.performsFirstActionWithFullSwipe = false
+
+        return configuration
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
