@@ -56,4 +56,12 @@ extension UIImage {
     static var doubleCheckmarkIcon: UIImage? {
         return UIImage(named: "doubleCheckmarkIcon")
     }
+
+    static var trashIcon: UIImage? {
+        return UIImage(named: "trashIcon")
+    }
+
+    static var flagIcon: UIImage? {
+        return UIImage(named: "flagIcon")
+    }
 }

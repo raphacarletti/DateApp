@@ -53,6 +53,15 @@ class InboxChatTableViewCell: UITableViewCell {
         selectionStyle = .none
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setActions(color: .mediumGray)
+    }
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        setActions(color: .mediumGray)
+    }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

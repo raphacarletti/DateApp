@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 import StreamChat
 
 final class InboxViewModel {
@@ -82,5 +82,46 @@ final class InboxViewModel {
             UserDefaultUtils().save(object: pinnedChatIds)
         }
         reloadTable?()
+    }
+
+    func pinSwipeAction(indexPath: IndexPath) -> UIContextualAction {
+        let title = indexPath.section == 0 ? "Unpin" : "Pin"
+        let pinButton = UIContextualAction(style: .normal, title: title, handler: { [weak self] action, view, completion in
+            guard let self = self else { return }
+            self.pinAction(indexPath: indexPath)
+            completion(true)
+        })
+        pinButton.backgroundColor = .white
+        pinButton.image = UIGraphicsImageRenderer(size: CGSize(width: 20, height: 20)).image(actions: { _ in
+            UIImage.pinIcon?.draw(in: CGRect(x: 0, y: 0, width: 20, height: 20))
+        })
+
+        return pinButton
+    }
+
+    func unmatchSwipeAction() -> UIContextualAction {
+        let unmatchButton = UIContextualAction(style: .normal, title: "Unmatch", handler: { [weak self] action, view, completion in
+            guard let self = self else { return }
+            completion(true)
+        })
+        unmatchButton.backgroundColor = .white
+        unmatchButton.image = UIGraphicsImageRenderer(size: CGSize(width: 20, height: 20)).image(actions: { _ in
+            UIImage.trashIcon?.draw(in: CGRect(x: 0, y: 0, width: 20, height: 20))
+        })
+
+        return unmatchButton
+    }
+
+    func reportSwipeAction() -> UIContextualAction {
+        let reportButton =  UIContextualAction(style: .normal, title: "Report", handler: { [weak self] action, view, completion in
+            guard let self = self else { return }
+            completion(true)
+        })
+        reportButton.backgroundColor = .white
+        reportButton.image = UIGraphicsImageRenderer(size: CGSize(width: 25, height: 25)).image(actions: { _ in
+            UIImage.flagIcon?.draw(in: CGRect(x: 0, y: 0, width: 25, height: 25))
+        })
+
+        return reportButton
     }
 }

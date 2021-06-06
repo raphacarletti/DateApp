@@ -16,6 +16,7 @@
 		6D2E44402655BDD1004B98BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2E443E2655BDD1004B98BC /* LaunchScreen.storyboard */; };
 		6D2E44492655BE31004B98BC /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2E44482655BE31004B98BC /* Events.storyboard */; };
 		6D800B99266ACFD000C7EB08 /* OptionsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D800B98266ACFD000C7EB08 /* OptionsMenuViewController.swift */; };
+		6D800B9B266D766300C7EB08 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D800B9A266D766300C7EB08 /* UITableViewCell+Extension.swift */; };
 		6DAA3297265C4E1500D74337 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DAA3296265C4E1500D74337 /* Main.storyboard */; };
 		6DAA329B265C4F0800D74337 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DAA329A265C4F0800D74337 /* Chat.storyboard */; };
 		6DAA329E265C4FFF00D74337 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAA329D265C4FFF00D74337 /* InboxViewController.swift */; };
@@ -75,6 +76,7 @@
 		6D2E44412655BDD1004B98BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D2E44482655BE31004B98BC /* Events.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
 		6D800B98266ACFD000C7EB08 /* OptionsMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsMenuViewController.swift; sourceTree = "<group>"; };
+		6D800B9A266D766300C7EB08 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		6DAA3296265C4E1500D74337 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6DAA329A265C4F0800D74337 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		6DAA329D265C4FFF00D74337 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				6DD0DBC426585B9B0025AF3C /* UIView+Extension.swift */,
 				6DF9BA142662658F00803C7F /* NotificationCenter+Extension.swift */,
 				6DF9BA1626626F0D00803C7F /* Date+Extension.swift */,
+				6D800B9A266D766300C7EB08 /* UITableViewCell+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				6DD0DBAE2655D1D30025AF3C /* Event.swift in Sources */,
 				6DF9BA152662658F00803C7F /* NotificationCenter+Extension.swift in Sources */,
 				6DAA32AD265C55FF00D74337 /* InboxChatTableViewCell.swift in Sources */,
+				6D800B9B266D766300C7EB08 /* UITableViewCell+Extension.swift in Sources */,
 				6DD0DBB22655D3B20025AF3C /* Array+Extension.swift in Sources */,
 				6D800B99266ACFD000C7EB08 /* OptionsMenuViewController.swift in Sources */,
 				6D2E44382655BDD0004B98BC /* ViewController.swift in Sources */,
