@@ -51,8 +51,8 @@ extension InboxViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = InboxSectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
-        view.setText(for: section)
+        let view = SectionHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
+        view.set(text: viewModel.getText(for: section))
         return view
     }
 
@@ -67,8 +67,6 @@ extension InboxViewController: UITableViewDelegate {
         viewModel.setSelectedChannelId(for: indexPath)
         performSegue(withIdentifier: Segue.inboxToConvesationScreen, sender: self)
     }
-
-
 }
 
 extension InboxViewController: UITableViewDataSource {

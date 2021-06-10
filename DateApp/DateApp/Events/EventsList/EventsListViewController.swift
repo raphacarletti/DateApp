@@ -23,6 +23,7 @@ final class EventListViewController: UIViewController {
             filterIconButton.setTitle("", for: .normal)
             filterIconButton.setImage(.filterIcon, for: .normal)
             filterIconButton.tintColor = .primaryColor
+            filterIconButton.addTarget(self, action: #selector(didTapFilterButton), for: .touchUpInside)
         }
     }
     @IBOutlet weak var allAttendingSegmentedControl: BetterSegmentedControl! {
@@ -47,6 +48,10 @@ final class EventListViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         viewModel.getEvents()
+        viewModel.reloadRow = { [weak self] row in
+            guard let self = self else { return }
+            self.eventsTableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -55,6 +60,11 @@ final class EventListViewController: UIViewController {
         }
 
         destination.set(event: viewModel.selectedEvent)
+    }
+
+    @objc
+    func didTapFilterButton() {
+
     }
 }
 

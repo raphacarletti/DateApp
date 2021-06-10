@@ -16,7 +16,7 @@ class EventCollectionViewCell: UICollectionViewCell {
     }
 
     func set(event: Event) {
-        eventSummaryView.set(event: event)
+        eventSummaryView.set(event: event, isExpanded: false, isCell: false)
     }
 
 }

@@ -36,6 +36,19 @@ final class InboxViewModel {
         selectedChannelId = channelId
     }
 
+    func getText(for section: Int) -> String {
+        var text = ""
+        switch section {
+        case 0:
+            text = "Pinned"
+        case 1:
+            text = "Other"
+        default:
+            break
+        }
+        return text
+    }
+
 
     func getChannels(completion: @escaping () -> Void) {
         Chat.shared.getChannels { [weak self] error in

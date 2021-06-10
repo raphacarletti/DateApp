@@ -41,7 +41,7 @@ class ChatEventTableViewCell: UITableViewCell {
             return
         }
         self.event = eventAttachment.event
-        eventSummaryView.set(event: eventAttachment.event)
+        eventSummaryView.set(event: eventAttachment.event, isExpanded: false, isCell: false)
         eventSummaryView.isUserInteractionEnabled = true
         eventSummaryView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapEventCell)))
     }

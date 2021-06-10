@@ -1,6 +1,6 @@
 import UIKit
 
-class InboxSectionView: CustomView {
+class SectionHeaderView: CustomView {
     @IBOutlet weak var sectionTitleLabel: UILabel! {
         didSet {
             sectionTitleLabel.textColor = .mediumGray
@@ -8,17 +8,7 @@ class InboxSectionView: CustomView {
         }
     }
 
-    func setText(for section: Int) {
-        var text: String = ""
-        switch section {
-        case 0:
-            text = "Pinned"
-        case 1:
-            text = "Other"
-        default:
-            break
-        }
+    func set(text: String) {
         sectionTitleLabel.text = text
     }
-
 }

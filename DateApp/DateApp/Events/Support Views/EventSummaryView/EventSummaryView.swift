@@ -1,5 +1,9 @@
 import UIKit
 
+protocol EventSummaryViewDelegate: AnyObject {
+    func didTapDetailButton(id: Int)
+}
+
 class EventSummaryView: CustomView {
     @IBOutlet weak var roundedView: UIView! {
         didSet {
@@ -57,11 +61,54 @@ class EventSummaryView: CustomView {
             pinIconImageView.contentMode = .scaleAspectFit
         }
     }
+    @IBOutlet weak var detailButton: UIButton! {
+        didSet {
+            detailButton.tintColor = .mediumGray
+            detailButton.layer.cornerRadius = 16
+            detailButton.clipsToBounds = true
+            detailButton.setTitleColor(.mediumGray, for: .normal)
+            detailButton.backgroundColor = .white
+            detailButton.imageView?.transform = CGAffineTransform(rotationAngle: .pi / 2)
+            detailButton.addTarget(self, action: #selector(didTapDetailButton), for: .touchUpInside)
+        }
+    }
+    @IBOutlet weak var detailsTextView: UITextView!
+    @IBOutlet weak var detailsTextViewHeight: NSLayoutConstraint!
 
-    func set(event: Event) {
+    weak var delegate: EventSummaryViewDelegate? = nil
+    var event: Event?
+
+    func set(event: Event, isExpanded: Bool, isCell: Bool, delegate: EventSummaryViewDelegate? = nil) {
+        if !isCell {
+            detailButton.isHidden = true
+        }
+        self.delegate = delegate
+        self.event = event
         eventImage.kf.setImage(with: URL(string: event.imgUrl))
         eventTitleLabel.text = event.name
         locationLabel.text = event.venue
         dateLabel.text = event.formattedDate
+        detailsTextView.text = event.description
+        expandCell(isExpanded: isExpanded)
+    }
+
+    @objc
+    func didTapDetailButton() {
+        delegate?.didTapDetailButton(id: event?.id ?? 0)
+    }
+
+    func expandCell(isExpanded: Bool) {
+        let transform: CGAffineTransform
+        let textViewHeight: Int
+        if isExpanded {
+            transform = CGAffineTransform(rotationAngle: 3 * .pi / 2)
+            textViewHeight = 100
+        } else {
+            transform = CGAffineTransform(rotationAngle: .pi / 2)
+            textViewHeight = 0
+        }
+
+        detailButton.imageView?.transform = transform
+        detailsTextViewHeight.constant = CGFloat(textViewHeight)
     }
 }

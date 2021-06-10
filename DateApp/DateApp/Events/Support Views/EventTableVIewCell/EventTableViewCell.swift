@@ -21,8 +21,8 @@ class EventTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func set(event: Event) {
-        eventSummaryView.set(event: event)
+    func set(event: Event, isExpanded: Bool, delegate: EventSummaryViewDelegate) {
+        eventSummaryView.set(event: event, isExpanded: isExpanded, isCell: true, delegate: delegate)
     }
     
 }
