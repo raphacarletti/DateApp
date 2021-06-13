@@ -5,4 +5,7 @@ struct Segue {
     static let inboxToConvesationScreen = "inboxToConvesationScreen"
     static let conversationToEventSegue = "conversationToEventSegue"
     static let presentChatMoreOption = "presentChatMoreOption"
+    static let profileToWellnessPillarsSegue = "profileToWellnessPillarsSegue"
+    static let wellnessPillarsToDetailSegue = "wellnessPillarsToDetailSegue"
+    static let wellnessPillarDetailsToEventDetailsSegue = "wellnessPillarDetailsToEventDetailsSegue"
 }

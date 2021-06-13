@@ -87,4 +87,12 @@ extension UIView {
 
         return constraint
     }
+
+    func applyDefaultShadow(with cornerRadius: CGFloat = 0) {
+        layer.shadowColor = UIColor.mediumGray.cgColor
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: 0, height: 2)
+        layer.shadowRadius = 2
+        layer.cornerRadius = cornerRadius
+    }
 }

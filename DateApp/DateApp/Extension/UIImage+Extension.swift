@@ -64,4 +64,24 @@ extension UIImage {
     static var flagIcon: UIImage? {
         return UIImage(named: "flagIcon")
     }
+
+    static var sendIcon: UIImage? {
+        return UIImage(named: "sendIcon")
+    }
+
+    static var settingsIcon: UIImage? {
+        return UIImage(named: "settingsIcon")
+    }
+
+    static var editIcon: UIImage? {
+        return UIImage(named: "editIcon")
+    }
+
+    static var closeQuoteIcon: UIImage? {
+        return UIImage(named: "closeQuoteIcon")
+    }
+
+    static var startQuoteIcon: UIImage? {
+        return UIImage(named: "startQuoteIcon")
+    }
 }

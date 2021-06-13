@@ -11,4 +11,9 @@ class SectionHeaderView: CustomView {
     func set(text: String) {
         sectionTitleLabel.text = text
     }
+
+    func setBackgroundColor(color: UIColor) {
+        backgroundColor = color
+        sectionTitleLabel.backgroundColor = color
+    }
 }

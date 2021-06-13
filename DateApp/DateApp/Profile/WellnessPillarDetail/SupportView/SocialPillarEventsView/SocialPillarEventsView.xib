@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SocialPillarEventsView" customModule="DateApp" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="X7H-6t-EGd" id="V3Y-1E-QqB"/>
+                <outlet property="titleLabel" destination="i0l-r2-2ly" id="L6m-2R-uVa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="paF-B2-vQy">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="329"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Pillar Benefits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0l-r2-2ly">
+                    <rect key="frame" x="16" y="16" width="154" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X7H-6t-EGd">
+                    <rect key="frame" x="0.0" y="48" width="405" height="265"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="265" id="XJJ-5t-tVt"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="akA-H9-DRx">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells>
+                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="q5h-5P-c1U">
+                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rl3-rn-9Fr">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </collectionViewCellContentView>
+                        </collectionViewCell>
+                    </cells>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="NeP-dx-kcT"/>
+            <constraints>
+                <constraint firstItem="X7H-6t-EGd" firstAttribute="leading" secondItem="paF-B2-vQy" secondAttribute="leading" id="C5e-6g-btm"/>
+                <constraint firstAttribute="bottom" secondItem="X7H-6t-EGd" secondAttribute="bottom" constant="16" id="IWc-KP-FAr"/>
+                <constraint firstItem="X7H-6t-EGd" firstAttribute="top" secondItem="i0l-r2-2ly" secondAttribute="bottom" constant="16" id="YRx-Gt-dN5"/>
+                <constraint firstItem="i0l-r2-2ly" firstAttribute="top" secondItem="paF-B2-vQy" secondAttribute="top" constant="16" id="ZpJ-RC-hic"/>
+                <constraint firstAttribute="trailing" secondItem="X7H-6t-EGd" secondAttribute="trailing" id="guY-YU-pfA"/>
+                <constraint firstItem="i0l-r2-2ly" firstAttribute="leading" secondItem="paF-B2-vQy" secondAttribute="leading" constant="16" id="rrJ-Lh-9wQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-62" y="-175"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
