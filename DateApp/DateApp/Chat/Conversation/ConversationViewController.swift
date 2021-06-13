@@ -13,6 +13,11 @@ final class ConversationViewController: UIViewController {
             backButton.clipsToBounds = true
         }
     }
+    @IBOutlet weak var backIcon: UIImageView! {
+        didSet {
+            backIcon.tintColor = .mediumGray
+        }
+    }
     @IBOutlet weak var conversationOptionsButton: UIView! {
         didSet {
             conversationOptionsButton.layer.cornerRadius = 25

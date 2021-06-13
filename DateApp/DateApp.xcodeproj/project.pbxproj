@@ -44,6 +44,9 @@
 		6D800BE02676591C00C7EB08 /* SocialPillarEventsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D800BDF2676591C00C7EB08 /* SocialPillarEventsView.xib */; };
 		6D800BE2267669B000C7EB08 /* WellnessPillarDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D800BE1267669B000C7EB08 /* WellnessPillarDetailsViewModel.swift */; };
 		6D800BE4267669FC00C7EB08 /* WellnessPillarDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D800BE3267669FC00C7EB08 /* WellnessPillarDetailsWorker.swift */; };
+		6D800BE72676707400C7EB08 /* SearchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D800BE62676707400C7EB08 /* SearchFilterView.swift */; };
+		6D800BE92676707F00C7EB08 /* SearchFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D800BE82676707F00C7EB08 /* SearchFilterView.xib */; };
+		6D800BEC26767DBE00C7EB08 /* PillarFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D800BEB26767DBE00C7EB08 /* PillarFilterViewController.swift */; };
 		6DAA3297265C4E1500D74337 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DAA3296265C4E1500D74337 /* Main.storyboard */; };
 		6DAA329B265C4F0800D74337 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DAA329A265C4F0800D74337 /* Chat.storyboard */; };
 		6DAA329E265C4FFF00D74337 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAA329D265C4FFF00D74337 /* InboxViewController.swift */; };
@@ -131,6 +134,9 @@
 		6D800BDF2676591C00C7EB08 /* SocialPillarEventsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocialPillarEventsView.xib; sourceTree = "<group>"; };
 		6D800BE1267669B000C7EB08 /* WellnessPillarDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessPillarDetailsViewModel.swift; sourceTree = "<group>"; };
 		6D800BE3267669FC00C7EB08 /* WellnessPillarDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessPillarDetailsWorker.swift; sourceTree = "<group>"; };
+		6D800BE62676707400C7EB08 /* SearchFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterView.swift; sourceTree = "<group>"; };
+		6D800BE82676707F00C7EB08 /* SearchFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFilterView.xib; sourceTree = "<group>"; };
+		6D800BEB26767DBE00C7EB08 /* PillarFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillarFilterViewController.swift; sourceTree = "<group>"; };
 		6DAA3296265C4E1500D74337 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6DAA329A265C4F0800D74337 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		6DAA329D265C4FFF00D74337 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +247,7 @@
 		6D2E44472655BE1D004B98BC /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				6D800BEA26767DAC00C7EB08 /* PillarFilter */,
 				6DD0DBAC2655D1C90025AF3C /* Model */,
 				6DD0DBA62655CF000025AF3C /* Support Views */,
 				6D2E44482655BE31004B98BC /* Events.storyboard */,
@@ -434,6 +441,23 @@
 			path = SocialPillarEventsView;
 			sourceTree = "<group>";
 		};
+		6D800BE52676706100C7EB08 /* SearchFilterView */ = {
+			isa = PBXGroup;
+			children = (
+				6D800BE62676707400C7EB08 /* SearchFilterView.swift */,
+				6D800BE82676707F00C7EB08 /* SearchFilterView.xib */,
+			);
+			path = SearchFilterView;
+			sourceTree = "<group>";
+		};
+		6D800BEA26767DAC00C7EB08 /* PillarFilter */ = {
+			isa = PBXGroup;
+			children = (
+				6D800BEB26767DBE00C7EB08 /* PillarFilterViewController.swift */,
+			);
+			path = PillarFilter;
+			sourceTree = "<group>";
+		};
 		6DAA3299265C4EF800D74337 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +555,7 @@
 		6DD0DBA62655CF000025AF3C /* Support Views */ = {
 			isa = PBXGroup;
 			children = (
+				6D800BE52676706100C7EB08 /* SearchFilterView */,
 				6DD0DBC6265864D60025AF3C /* EventCollectionViewCell */,
 				6DD0DBBF265852910025AF3C /* EventSummaryView */,
 				6DD0DBAB2655CF2E0025AF3C /* EventTableVIewCell */,
@@ -708,6 +733,7 @@
 				6DD0DBAA2655CF280025AF3C /* EventTableViewCell.xib in Resources */,
 				6D2E44402655BDD1004B98BC /* LaunchScreen.storyboard in Resources */,
 				6DF9BA1C26627A1D00803C7F /* ChatEventTableViewCell.xib in Resources */,
+				6D800BE92676707F00C7EB08 /* SearchFilterView.xib in Resources */,
 				6DD0DBC3265852BB0025AF3C /* EventSummaryView.xib in Resources */,
 				6D800BBB26740EC800C7EB08 /* SendInviteProfileTableViewCell.xib in Resources */,
 				6D800B9E266EC28F00C7EB08 /* Notifications.storyboard in Resources */,
@@ -777,6 +803,7 @@
 				6D800BA9266ECE1D00C7EB08 /* NotificationTableViewCell.swift in Sources */,
 				6D800BB42674097A00C7EB08 /* SendInviteViewController.swift in Sources */,
 				6DF9BA1E26627ED500803C7F /* MessageAttachments.swift in Sources */,
+				6D800BE72676707400C7EB08 /* SearchFilterView.swift in Sources */,
 				6DF9BA1B26627A1D00803C7F /* ChatEventTableViewCell.swift in Sources */,
 				6DD0DBBC2657D9900025AF3C /* ExternalLinksUtils.swift in Sources */,
 				6DAA329E265C4FFF00D74337 /* InboxViewController.swift in Sources */,
@@ -809,6 +836,7 @@
 				6DD0DBB72657130F0025AF3C /* EventDetailViewController.swift in Sources */,
 				6D800BBE2674124800C7EB08 /* Profile.swift in Sources */,
 				6DAA32B4265DCD1F00D74337 /* UserDefaultsUtils.swift in Sources */,
+				6D800BEC26767DBE00C7EB08 /* PillarFilterViewController.swift in Sources */,
 				6DAA32B0265DBBF000D74337 /* LoadingUtils.swift in Sources */,
 				6DD0DBA52655CB270025AF3C /* UIImage+Extension.swift in Sources */,
 				6DD0DBCE265B09D90025AF3C /* ShapeLayerUtils.swift in Sources */,

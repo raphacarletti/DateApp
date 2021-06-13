@@ -234,6 +234,7 @@
                     <navigationItem key="navigationItem" id="blt-vv-hwL"/>
                     <connections>
                         <outlet property="backButton" destination="RUL-gL-9m2" id="09W-0A-QLl"/>
+                        <outlet property="backIcon" destination="YXf-kY-chC" id="caV-Zq-QMs"/>
                         <outlet property="conversationOptionsButton" destination="Zxh-gi-8jF" id="7WT-aB-pw6"/>
                         <outlet property="conversationTableView" destination="Fou-Az-EUD" id="UbB-jq-6Iu"/>
                         <outlet property="headerView" destination="Lxh-8S-iKg" id="yB4-yD-fAl"/>

@@ -13,19 +13,12 @@ final class EventListViewController: UIViewController {
             separatorViewSegmentedControl.backgroundColor = .primaryColor
         }
     }
-    @IBOutlet weak var eventSearchBar: UISearchBar! {
+    @IBOutlet weak var searchFilterView: SearchFilterView! {
         didSet {
-            eventSearchBar.placeholder = "Search events"
+            searchFilterView.delegate = self
         }
     }
-    @IBOutlet weak var filterIconButton: UIButton! {
-        didSet {
-            filterIconButton.setTitle("", for: .normal)
-            filterIconButton.setImage(.filterIcon, for: .normal)
-            filterIconButton.tintColor = .primaryColor
-            filterIconButton.addTarget(self, action: #selector(didTapFilterButton), for: .touchUpInside)
-        }
-    }
+
     @IBOutlet weak var allAttendingSegmentedControl: BetterSegmentedControl! {
         didSet {
             allAttendingSegmentedControl.cornerRadius = 15
@@ -61,11 +54,6 @@ final class EventListViewController: UIViewController {
 
         destination.set(event: viewModel.selectedEvent)
     }
-
-    @objc
-    func didTapFilterButton() {
-
-    }
 }
 
 extension EventListViewController: UITableViewDelegate {
@@ -82,5 +70,11 @@ extension EventListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return viewModel.cellForRow(tableView: tableView, indexPath: indexPath)
+    }
+}
+
+extension EventListViewController: SearchFilterViewDelegate {
+    func showPillarFilterOptions() {
+        performSegue(withIdentifier: Segue.eventListToPillarFilterSegue, sender: nil)
     }
 }
