@@ -84,4 +84,8 @@ extension UIImage {
     static var startQuoteIcon: UIImage? {
         return UIImage(named: "startQuoteIcon")
     }
+
+    static var bookmarkFillIcon: UIImage? {
+        return UIImage(named: "bookmarkFillIcon")
+    }
 }

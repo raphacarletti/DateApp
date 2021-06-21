@@ -177,6 +177,7 @@
                         <outlet property="settingsButton" destination="ZVT-CE-Bjz" id="F04-ZI-ggu"/>
                         <outlet property="wellnessPillarsOption" destination="G5J-57-LEG" id="dSN-Bs-MkT"/>
                         <segue destination="EYB-BR-e0D" kind="show" identifier="profileToWellnessPillarsSegue" id="ZWn-Mb-cCq"/>
+                        <segue destination="tlt-4m-zf8" kind="show" identifier="profileToMySavedSegue" id="04i-Il-bOz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -270,16 +271,118 @@
             </objects>
             <point key="canvasLocation" x="1907" y="51"/>
         </scene>
+        <!--My Saved View Controller-->
+        <scene sceneID="g9F-ru-t9r">
+            <objects>
+                <viewController id="tlt-4m-zf8" customClass="MySavedViewController" customModule="DateApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dm8-iz-QGN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqW-nQ-mLn">
+                                <rect key="frame" x="16" y="59" width="50" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backArrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="VoE-4a-Vq5">
+                                        <rect key="frame" x="12.5" y="12.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="RbA-yw-mgq"/>
+                                            <constraint firstAttribute="height" constant="25" id="ZP0-do-Ur3"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="67i-nk-eT3"/>
+                                    <constraint firstItem="VoE-4a-Vq5" firstAttribute="centerX" secondItem="gqW-nQ-mLn" secondAttribute="centerX" id="QXr-Iz-gWw"/>
+                                    <constraint firstAttribute="height" constant="50" id="lTL-Zx-3fK"/>
+                                    <constraint firstItem="VoE-4a-Vq5" firstAttribute="centerY" secondItem="gqW-nQ-mLn" secondAttribute="centerY" id="z3a-nm-NJj"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAVED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kry-xk-7NU">
+                                <rect key="frame" x="161" y="76" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hC3-tb-xFF" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                <rect key="frame" x="16" y="117" width="343" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LPh-96-ogn"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorViewBackgroundColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorViewBorderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="indicatorViewBorderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="indicatorViewInset">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhl-s4-Ive">
+                                <rect key="frame" x="16" y="161" width="343" height="1"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="mdv-Le-vS4"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I0A-jT-Dpu">
+                                <rect key="frame" x="0.0" y="166" width="375" height="452"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PQK-q2-Sph"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hC3-tb-xFF" firstAttribute="leading" secondItem="PQK-q2-Sph" secondAttribute="leading" constant="16" id="1sV-Tp-zOV"/>
+                            <constraint firstItem="gqW-nQ-mLn" firstAttribute="leading" secondItem="PQK-q2-Sph" secondAttribute="leading" constant="16" id="8hd-Rx-zxA"/>
+                            <constraint firstItem="I0A-jT-Dpu" firstAttribute="leading" secondItem="PQK-q2-Sph" secondAttribute="leading" id="DcA-vg-2An"/>
+                            <constraint firstItem="hC3-tb-xFF" firstAttribute="top" secondItem="gqW-nQ-mLn" secondAttribute="bottom" constant="8" id="IEs-L5-HOo"/>
+                            <constraint firstItem="Qhl-s4-Ive" firstAttribute="leading" secondItem="PQK-q2-Sph" secondAttribute="leading" constant="16" id="NIf-on-Lcp"/>
+                            <constraint firstItem="Kry-xk-7NU" firstAttribute="top" secondItem="PQK-q2-Sph" secondAttribute="top" constant="32" id="OR7-re-QpV"/>
+                            <constraint firstItem="Kry-xk-7NU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gqW-nQ-mLn" secondAttribute="trailing" constant="8" id="Qj1-YT-2cr"/>
+                            <constraint firstItem="PQK-q2-Sph" firstAttribute="trailing" secondItem="I0A-jT-Dpu" secondAttribute="trailing" id="SLw-zY-ZHM"/>
+                            <constraint firstItem="gqW-nQ-mLn" firstAttribute="top" secondItem="PQK-q2-Sph" secondAttribute="top" constant="15" id="VAI-72-zuR"/>
+                            <constraint firstItem="Kry-xk-7NU" firstAttribute="centerX" secondItem="dm8-iz-QGN" secondAttribute="centerX" id="Vhj-tu-8C7"/>
+                            <constraint firstItem="PQK-q2-Sph" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kry-xk-7NU" secondAttribute="trailing" constant="8" id="WQ6-11-iuE"/>
+                            <constraint firstItem="PQK-q2-Sph" firstAttribute="trailing" secondItem="hC3-tb-xFF" secondAttribute="trailing" constant="16" id="b4A-5X-Tjz"/>
+                            <constraint firstItem="PQK-q2-Sph" firstAttribute="bottom" secondItem="I0A-jT-Dpu" secondAttribute="bottom" id="ihA-BU-X86"/>
+                            <constraint firstItem="Qhl-s4-Ive" firstAttribute="top" secondItem="hC3-tb-xFF" secondAttribute="bottom" constant="4" id="lDk-is-GPL"/>
+                            <constraint firstItem="PQK-q2-Sph" firstAttribute="trailing" secondItem="Qhl-s4-Ive" secondAttribute="trailing" constant="16" id="osh-GC-jvD"/>
+                            <constraint firstItem="I0A-jT-Dpu" firstAttribute="top" secondItem="Qhl-s4-Ive" secondAttribute="bottom" constant="4" id="yQf-AJ-tEi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IbW-d6-Njr"/>
+                    <connections>
+                        <outlet property="backButton" destination="gqW-nQ-mLn" id="ji5-TT-k2f"/>
+                        <outlet property="backIcon" destination="VoE-4a-Vq5" id="cLd-3x-qh8"/>
+                        <outlet property="segmentControl" destination="hC3-tb-xFF" id="sjG-UE-SX9"/>
+                        <outlet property="separatorView" destination="Qhl-s4-Ive" id="ul9-Gk-HYA"/>
+                        <outlet property="tableView" destination="I0A-jT-Dpu" id="1Rl-AG-ztt"/>
+                        <outlet property="titleLabel" destination="Kry-xk-7NU" id="G0O-q2-4Kh"/>
+                        <segue destination="4kf-72-Ucr" kind="show" identifier="mySavedToEventDetailSegue" id="HK8-aP-VEX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Kl-ew-NvE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1737" y="848"/>
+        </scene>
         <!--Wellness Pillar Detail View Controller-->
         <scene sceneID="qpi-r0-4iF">
             <objects>
                 <viewController id="kNU-6c-emU" customClass="WellnessPillarDetailViewController" customModule="DateApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="raz-A5-Dfa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZ0-52-rZr">
-                                <rect key="frame" x="0.0" y="44" width="375" height="1907"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="907"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-C7-DUX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1660"/>
@@ -320,9 +423,9 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WB-Sy-DMJ">
                                                         <rect key="frame" x="0.0" y="28" width="343" height="84"/>
-                                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mi felis, viverra dapibus nunc quis, semper convallis lacus. Aenean nec mattis nulla, a pulvinar mi. Cras porta lectus ipsum, sit amet egestas diam viverra eu. Nunc fringilla, erat vitae interdum tristique, felis arcu vulputate nunc, ac pretium magna mauris vel nisl. Morbi a lorem a lectus cursus venenatis. Morbi at ullamcorper nunc. Ut interdum neque vitae maximus lobortis. Ut vehicula ornare fermentum. Maecenas volutpat pulvinar augue, vel porta justo semper a. Morbi rhoncus faucibus nisl in tristique. Aenean nec tellus et sem ultricies euismod.
+                                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mi felis, viverra dapibus nunc quis, semper convallis lacus. Aenean nec mattis nulla, a pulvinar mi. Cras porta lectus ipsum, sit amet egestas diam viverra eu. Nunc fringilla, erat vitae interdum tristique, felis arcu vulputate nunc, ac pretium magna mauris vel nisl. Morbi a lorem a lectus cursus venenatis. Morbi at ullamcorper nunc. Ut interdum neque vitae maximus lobortis. Ut vehicula ornare fermentum. Maecenas volutpat pulvinar augue, vel porta justo semper a. Morbi rhoncus faucibus nisl in tristique. Aenean nec tellus et sem ultricies euismod.
 
-Maecenas luctus, lorem vitae euismod suscipit, urna magna fringilla enim, et hendrerit magna felis at felis. Vestibulum porta viverra elit nec imperdiet. Sed tincidunt magna in lorem tempus, eu malesuada nibh dignissim. Nulla placerat hendrerit ligula et luctus. Vestibulum quis nibh fermentum, auctor sapien volutpat, faucibus nibh. Vestibulum convallis magna quis tortor dignissim molestie. Integer libero mi, pharetra non lacus volutpat, consequat porta velit. Suspendisse sit amet eros et lacus fringilla tempor. Praesent rhoncus dignissim massa, nec iaculis urna dapibus vel. Donec vulputate, erat ut fermentum vulputate, eros libero malesuada dui, ac molestie dolor sapien a velit. Suspendisse at ornare nibh. Sed vestibulum arcu ante, non varius massa finibus a. Pellentesque consectetur massa sit amet orci tincidunt porta.</mutableString>
+Maecenas luctus, lorem vitae euismod suscipit, urna magna fringilla enim, et hendrerit magna felis at felis. Vestibulum porta viverra elit nec imperdiet. Sed tincidunt magna in lorem tempus, eu malesuada nibh dignissim. Nulla placerat hendrerit ligula et luctus. Vestibulum quis nibh fermentum, auctor sapien volutpat, faucibus nibh. Vestibulum convallis magna quis tortor dignissim molestie. Integer libero mi, pharetra non lacus volutpat, consequat porta velit. Suspendisse sit amet eros et lacus fringilla tempor. Praesent rhoncus dignissim massa, nec iaculis urna dapibus vel. Donec vulputate, erat ut fermentum vulputate, eros libero malesuada dui, ac molestie dolor sapien a velit. Suspendisse at ornare nibh. Sed vestibulum arcu ante, non varius massa finibus a. Pellentesque consectetur massa sit amet orci tincidunt porta.</string>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -450,7 +553,7 @@ Maecenas luctus, lorem vitae euismod suscipit, urna magna fringilla enim, et hen
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SxQ-f0-f0T"/>
-                    <size key="freeformSize" width="375" height="2000"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="aboutHeaderLabel" destination="fHA-hH-MHz" id="9UE-uH-0uL"/>
                         <outlet property="aboutLabel" destination="7WB-Sy-DMJ" id="p5m-SO-860"/>
@@ -468,7 +571,7 @@ Maecenas luctus, lorem vitae euismod suscipit, urna magna fringilla enim, et hen
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0d-Dh-AWf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2760.8000000000002" y="37.781109445277366"/>
+            <point key="canvasLocation" x="2692" y="-1364"/>
         </scene>
         <!--EventDetailViewController-->
         <scene sceneID="VDz-pS-n67">
@@ -501,6 +604,14 @@ Maecenas luctus, lorem vitae euismod suscipit, urna magna fringilla enim, et hen
             <point key="canvasLocation" x="24.800000000000001" y="50.824587706146929"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="hC3-tb-xFF">
+            <size key="intrinsicContentSize" width="183" height="32"/>
+        </designable>
+    </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="HK8-aP-VEX"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="backArrowIcon" width="32" height="32"/>
         <image name="closeQuoteIcon" width="32" height="24"/>

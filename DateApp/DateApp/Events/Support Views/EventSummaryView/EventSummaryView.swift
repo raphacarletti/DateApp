@@ -41,6 +41,7 @@ class EventSummaryView: CustomView {
             favoriteButton.setTitle("", for: .normal)
             favoriteButton.setImage(.bookmarkIcon, for: .normal)
             favoriteButton.tintColor = .mediumGray
+            favoriteButton.addTarget(self, action: #selector(didTapFavoriteButton), for: .touchUpInside)
         }
     }
     @IBOutlet weak var locationLabel: UILabel! {
@@ -90,11 +91,41 @@ class EventSummaryView: CustomView {
         dateLabel.text = event.formattedDate
         detailsTextView.text = event.description
         expandCell(isExpanded: isExpanded)
+        reloadFavoriteButton()
     }
 
     @objc
     func didTapDetailButton() {
         delegate?.didTapDetailButton(id: event?.id ?? 0)
+    }
+
+    @objc
+    func didTapFavoriteButton() {
+        guard let event = event else { return }
+        let userDefaults = UserDefaultUtils()
+        var events = userDefaults.getSavedEvents()
+        if !events.isEmpty {
+            if let index = events.firstIndex(where: { $0.id == event.id }) {
+                events.remove(at: index)
+            } else {
+                events.append(event)
+            }
+            userDefaults.save(events: events)
+        } else {
+            userDefaults.save(events: [event])
+        }
+        reloadFavoriteButton()
+    }
+
+    func isFavorite(eventId: Int) -> Bool {
+        let userDefaults = UserDefaultUtils()
+        let events = userDefaults.getSavedEvents()
+        return events.contains(where: { $0.id == eventId })
+    }
+
+    func reloadFavoriteButton() {
+        guard let event = event else { return }
+        favoriteButton.setImage(isFavorite(eventId: event.id) ? .bookmarkFillIcon : .bookmarkIcon, for: .normal)
     }
 
     func expandCell(isExpanded: Bool) {

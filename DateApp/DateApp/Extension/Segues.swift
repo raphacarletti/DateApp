@@ -9,4 +9,6 @@ struct Segue {
     static let wellnessPillarsToDetailSegue = "wellnessPillarsToDetailSegue"
     static let wellnessPillarDetailsToEventDetailsSegue = "wellnessPillarDetailsToEventDetailsSegue"
     static let eventListToPillarFilterSegue = "eventListToPillarFilterSegue"
+    static let profileToMySavedSegue = "profileToMySavedSegue"
+    static let mySavedToEventDetailSegue = "mySavedToEventDetailSegue"
 }

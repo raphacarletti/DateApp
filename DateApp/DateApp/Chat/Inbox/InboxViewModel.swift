@@ -88,11 +88,11 @@ final class InboxViewModel {
                   let index = pinnedChatIds.firstIndex(where: { $0 == chat.cid.id })
             else { return }
             pinnedChatIds.remove(at: index)
-            UserDefaultUtils().save(object: pinnedChatIds)
+            UserDefaultUtils().save(object: pinnedChatIds, for: .pinnedMessages)
         } else {
             guard let chat = otherChats[safe: indexPath.row] else { return }
             pinnedChatIds.append(chat.cid.id)
-            UserDefaultUtils().save(object: pinnedChatIds)
+            UserDefaultUtils().save(object: pinnedChatIds, for: .pinnedMessages)
         }
         reloadTable?()
     }

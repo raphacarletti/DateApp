@@ -32,6 +32,8 @@ final class ProfileViewController: UIViewController {
     @IBOutlet weak var mySavedOption: ProfileOptionView! {
         didSet {
             mySavedOption.set(for: .mySaved)
+            mySavedOption.isUserInteractionEnabled = true
+            mySavedOption.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapMySavedOption)))
         }
     }
     @IBOutlet weak var wellnessPillarsOption: ProfileOptionView! {
@@ -60,5 +62,10 @@ final class ProfileViewController: UIViewController {
     @objc
     func didTapWellnessPillarOption() {
         performSegue(withIdentifier: Segue.profileToWellnessPillarsSegue, sender: nil)
+    }
+
+    @objc
+    func didTapMySavedOption() {
+        performSegue(withIdentifier: Segue.profileToMySavedSegue, sender: nil)
     }
 }
