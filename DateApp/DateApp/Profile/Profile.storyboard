@@ -378,11 +378,11 @@
             <objects>
                 <viewController id="kNU-6c-emU" customClass="WellnessPillarDetailViewController" customModule="DateApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="raz-A5-Dfa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZ0-52-rZr">
-                                <rect key="frame" x="0.0" y="44" width="375" height="907"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="1907"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-C7-DUX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1660"/>
@@ -496,13 +496,13 @@ Maecenas luctus, lorem vitae euismod suscipit, urna magna fringilla enim, et hen
                                                     <constraint firstItem="QLm-WK-fe9" firstAttribute="leading" secondItem="YZW-av-Hkj" secondAttribute="leading" id="pKU-bz-Frk"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="333.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ctk-Pt-wwu" customClass="SocialPillarEventsView" customModule="DateApp" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="333.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ctk-Pt-wwu" customClass="CollectionEventsView" customModule="DateApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="659.5" width="375" height="333.5"/>
                                             </view>
-                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="333.5" translatesAutoresizingMaskIntoConstraints="NO" id="s0G-0p-6fc" customClass="SocialPillarEventsView" customModule="DateApp" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="333.5" translatesAutoresizingMaskIntoConstraints="NO" id="s0G-0p-6fc" customClass="CollectionEventsView" customModule="DateApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="993" width="375" height="333.5"/>
                                             </view>
-                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="333.5" translatesAutoresizingMaskIntoConstraints="NO" id="GDo-fo-2hA" customClass="SocialPillarEventsView" customModule="DateApp" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="333.5" translatesAutoresizingMaskIntoConstraints="NO" id="GDo-fo-2hA" customClass="CollectionEventsView" customModule="DateApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="1326.5" width="375" height="333.5"/>
                                             </view>
                                         </subviews>
@@ -553,7 +553,7 @@ Maecenas luctus, lorem vitae euismod suscipit, urna magna fringilla enim, et hen
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SxQ-f0-f0T"/>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <size key="freeformSize" width="375" height="2000"/>
                     <connections>
                         <outlet property="aboutHeaderLabel" destination="fHA-hH-MHz" id="9UE-uH-0uL"/>
                         <outlet property="aboutLabel" destination="7WB-Sy-DMJ" id="p5m-SO-860"/>
@@ -610,7 +610,7 @@ Maecenas luctus, lorem vitae euismod suscipit, urna magna fringilla enim, et hen
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="HK8-aP-VEX"/>
+        <segue reference="qu1-6S-0kP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="backArrowIcon" width="32" height="32"/>

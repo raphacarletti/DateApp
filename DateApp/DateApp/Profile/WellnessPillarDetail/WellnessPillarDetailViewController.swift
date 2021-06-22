@@ -49,19 +49,19 @@ final class WellnessPillarDetailViewController: UIViewController {
             quoteAuthorLabel.textColor = .mediumGray
         }
     }
-    @IBOutlet weak var socialPillarEventView: SocialPillarEventsView! {
+    @IBOutlet weak var socialPillarEventView: CollectionEventsView! {
         didSet {
             socialPillarEventView.delegate = self
             socialPillarEventView.set(type: .events)
         }
     }
-    @IBOutlet weak var socialPillarBenefitsView: SocialPillarEventsView! {
+    @IBOutlet weak var socialPillarBenefitsView: CollectionEventsView! {
         didSet {
             socialPillarBenefitsView.delegate = self
             socialPillarBenefitsView.set(type: .benefits)
         }
     }
-    @IBOutlet weak var socialPillarContentView: SocialPillarEventsView! {
+    @IBOutlet weak var socialPillarContentView: CollectionEventsView! {
         didSet {
             socialPillarContentView.delegate = self
             socialPillarContentView.set(type: .content)
@@ -106,18 +106,18 @@ final class WellnessPillarDetailViewController: UIViewController {
     }
 }
 
-extension WellnessPillarDetailViewController: SocialPillarEventsViewDelegate {
-    func goToEvent(for type: SocialPillarEventsView.EventType, indexPath: IndexPath) {
-        let event = viewModel.getEvent(for: type, indexPath: indexPath)
+extension WellnessPillarDetailViewController: CollectionEventsViewDelegate {
+    func goToEvent(for type: CollectionEventsView.EventType, indexPath: IndexPath) {
+        guard let event = viewModel.getEvent(for: type, indexPath: indexPath) else { return }
         viewModel.setSelectedEvent(event)
         performSegue(withIdentifier: Segue.wellnessPillarDetailsToEventDetailsSegue, sender: nil)
     }
     
-    func numberOfItems(for type: SocialPillarEventsView.EventType) -> Int {
+    func numberOfItems(for type: CollectionEventsView.EventType) -> Int {
         return viewModel.numberOfItems(for: type)
     }
 
-    func cellForItem(for type: SocialPillarEventsView.EventType, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+    func cellForItem(for type: CollectionEventsView.EventType, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         return viewModel.cellForItem(for: type, collectionView: collectionView, indexPath: indexPath)
     }
 }

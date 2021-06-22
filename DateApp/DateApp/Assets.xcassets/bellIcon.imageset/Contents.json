@@ -1,0 +1,26 @@
+{
+  "images" : [
+    {
+      "filename" : "iconfinder_290107_alarm_alert_bell_christmas_notification_icon_64px.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "iconfinder_290107_alarm_alert_bell_christmas_notification_icon_64px-1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "iconfinder_290107_alarm_alert_bell_christmas_notification_icon_64px-2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "template"
+  }
+}

@@ -1,16 +1,21 @@
 import UIKit
 
-protocol SocialPillarEventsViewDelegate: AnyObject {
-    func numberOfItems(for type: SocialPillarEventsView.EventType) -> Int
-    func cellForItem(for type: SocialPillarEventsView.EventType, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell
-    func goToEvent(for type: SocialPillarEventsView.EventType, indexPath: IndexPath)
+protocol CollectionEventsViewDelegate: AnyObject {
+    func numberOfItems(for type: CollectionEventsView.EventType) -> Int
+    func cellForItem(for type: CollectionEventsView.EventType, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell
+    func goToEvent(for type: CollectionEventsView.EventType, indexPath: IndexPath)
 }
 
-class SocialPillarEventsView: CustomView {
+class CollectionEventsView: CustomView {
     enum EventType: CaseIterable {
         case events
         case benefits
         case content
+        case recommendedEvents
+        case recommendedPodcasts
+        case spiritualWellness
+        case physicalWellness
+        case socialWellness
 
         var title: String {
             switch self {
@@ -20,6 +25,16 @@ class SocialPillarEventsView: CustomView {
                 return "Social Pillar Benefits"
             case .content:
                 return "Social Pillar Content"
+            case .recommendedEvents:
+                return "Recommended Events"
+            case .recommendedPodcasts:
+                return "Recommended Podcasts"
+            case .spiritualWellness:
+                return "Spiritual Wellness"
+            case .physicalWellness:
+                return "Physical Wellness"
+            case .socialWellness:
+                return "Social Wellness"
             }
         }
     }
@@ -40,7 +55,7 @@ class SocialPillarEventsView: CustomView {
         }
     }
 
-    weak var delegate: SocialPillarEventsViewDelegate?
+    weak var delegate: CollectionEventsViewDelegate?
     private var type: EventType?
 
 
@@ -50,14 +65,14 @@ class SocialPillarEventsView: CustomView {
     }
 }
 
-extension SocialPillarEventsView: UICollectionViewDelegate {
+extension CollectionEventsView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let type = type else { return }
         delegate?.goToEvent(for: type, indexPath: indexPath)
     }
 }
 
-extension SocialPillarEventsView: UICollectionViewDataSource {
+extension CollectionEventsView: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -73,7 +88,7 @@ extension SocialPillarEventsView: UICollectionViewDataSource {
     }
 }
 
-extension SocialPillarEventsView: UICollectionViewDelegateFlowLayout {
+extension CollectionEventsView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 343, height: 264.5)
     }

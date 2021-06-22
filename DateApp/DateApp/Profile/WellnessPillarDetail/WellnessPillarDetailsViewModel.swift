@@ -23,7 +23,7 @@ final class WellnessPillarDetailsViewModel {
         selectedEvent = event
     }
 
-    func numberOfItems(for type: SocialPillarEventsView.EventType) -> Int {
+    func numberOfItems(for type: CollectionEventsView.EventType) -> Int {
         switch type {
         case .events:
             return events.count
@@ -31,21 +31,22 @@ final class WellnessPillarDetailsViewModel {
             return benefits.count
         case .content:
             return content.count
+        default:
+            return 0
         }
     }
 
-    func cellForItem(for type: SocialPillarEventsView.EventType, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EventCollectionViewCell.self), for: indexPath) as? EventCollectionViewCell else {
+    func cellForItem(for type: CollectionEventsView.EventType, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EventCollectionViewCell.self), for: indexPath) as? EventCollectionViewCell, let event = getEvent(for: type, indexPath: indexPath) else {
             return UICollectionViewCell()
         }
-
-        let event = getEvent(for: type, indexPath: indexPath)
+        
         cell.set(event: event)
 
         return cell
     }
 
-    func getEvent(for type: SocialPillarEventsView.EventType, indexPath: IndexPath) -> Event {
+    func getEvent(for type: CollectionEventsView.EventType, indexPath: IndexPath) -> Event? {
         switch type {
         case .events:
             return events[indexPath.row]
@@ -53,6 +54,8 @@ final class WellnessPillarDetailsViewModel {
             return benefits[indexPath.row]
         case .content:
             return content[indexPath.row]
+        default:
+            return nil
         }
     }
 }

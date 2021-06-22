@@ -11,4 +11,5 @@ struct Segue {
     static let eventListToPillarFilterSegue = "eventListToPillarFilterSegue"
     static let profileToMySavedSegue = "profileToMySavedSegue"
     static let mySavedToEventDetailSegue = "mySavedToEventDetailSegue"
+    static let forYouToEventDetailSegue = "forYouToEventDetailSegue"
 }

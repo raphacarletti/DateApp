@@ -88,4 +88,8 @@ extension UIImage {
     static var bookmarkFillIcon: UIImage? {
         return UIImage(named: "bookmarkFillIcon")
     }
+
+    static var bellIcon: UIImage? {
+        return UIImage(named: "bellIcon")
+    }
 }

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="whg-Da-hzF">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--For You View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="ForYouViewController" customModule="DateApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLH-RH-MUr">
+                                <rect key="frame" x="0.0" y="44" width="375" height="1907"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68H-wu-HGD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="910.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cy1-Yf-0UL">
+                                                <rect key="frame" x="16" y="40" width="69" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="tuZ-yA-zet" customClass="CollectionEventsView" customModule="DateApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="69.5" width="375" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="y7Q-m8-gvE" customClass="CollectionEventsView" customModule="DateApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="197.5" width="375" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="ngX-DN-NsN" customClass="CollectionEventsView" customModule="DateApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="325.5" width="375" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="M18-nv-0W2" customClass="CollectionEventsView" customModule="DateApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="453.5" width="375" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="5RT-Ql-hQi" customClass="CollectionEventsView" customModule="DateApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="581.5" width="375" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spotlight Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlw-AN-Vxd">
+                                                <rect key="frame" x="16" y="713.5" width="116" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="gLj-dc-cNU" customClass="EventSummaryView" customModule="DateApp" customModuleProvider="target">
+                                                <rect key="frame" x="32" y="750.5" width="311" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CG-cu-Pbo">
+                                                <rect key="frame" x="309" y="16" width="50" height="50"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bellIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ltu-Wh-Bbe">
+                                                        <rect key="frame" x="12.5" y="12.5" width="25" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="25" id="TvR-wc-5de"/>
+                                                            <constraint firstAttribute="height" constant="25" id="j8J-M2-5Uk"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="ltu-Wh-Bbe" firstAttribute="centerX" secondItem="1CG-cu-Pbo" secondAttribute="centerX" id="6EE-sX-3tN"/>
+                                                    <constraint firstAttribute="height" constant="50" id="XqI-0R-FVL"/>
+                                                    <constraint firstItem="ltu-Wh-Bbe" firstAttribute="centerY" secondItem="1CG-cu-Pbo" secondAttribute="centerY" id="Zml-Tx-NV2"/>
+                                                    <constraint firstAttribute="width" constant="50" id="b0j-y6-MAq"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="5RT-Ql-hQi" firstAttribute="leading" secondItem="68H-wu-HGD" secondAttribute="leading" id="45v-zA-GVM"/>
+                                            <constraint firstItem="M18-nv-0W2" firstAttribute="top" secondItem="ngX-DN-NsN" secondAttribute="bottom" id="4ce-IY-plQ"/>
+                                            <constraint firstItem="ngX-DN-NsN" firstAttribute="leading" secondItem="68H-wu-HGD" secondAttribute="leading" id="53U-Kd-aZv"/>
+                                            <constraint firstItem="ngX-DN-NsN" firstAttribute="top" secondItem="y7Q-m8-gvE" secondAttribute="bottom" id="8K1-Tl-HNQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="gLj-dc-cNU" secondAttribute="trailing" constant="32" id="LeK-dd-Ba1"/>
+                                            <constraint firstAttribute="trailing" secondItem="tuZ-yA-zet" secondAttribute="trailing" id="M3G-s2-XU3"/>
+                                            <constraint firstItem="M18-nv-0W2" firstAttribute="leading" secondItem="68H-wu-HGD" secondAttribute="leading" id="NL9-eL-Wml"/>
+                                            <constraint firstItem="1CG-cu-Pbo" firstAttribute="top" secondItem="68H-wu-HGD" secondAttribute="top" constant="16" id="Ni9-gS-nNi"/>
+                                            <constraint firstItem="gLj-dc-cNU" firstAttribute="leading" secondItem="68H-wu-HGD" secondAttribute="leading" constant="32" id="Pcw-wA-ntc"/>
+                                            <constraint firstItem="Cy1-Yf-0UL" firstAttribute="top" secondItem="68H-wu-HGD" secondAttribute="top" constant="40" id="PmM-KW-LdB"/>
+                                            <constraint firstItem="hlw-AN-Vxd" firstAttribute="top" secondItem="5RT-Ql-hQi" secondAttribute="bottom" constant="4" id="RvY-ZB-CEa"/>
+                                            <constraint firstAttribute="trailing" secondItem="1CG-cu-Pbo" secondAttribute="trailing" constant="16" id="Vxs-Tn-c1O"/>
+                                            <constraint firstItem="tuZ-yA-zet" firstAttribute="leading" secondItem="68H-wu-HGD" secondAttribute="leading" id="ZaP-DS-MZ5"/>
+                                            <constraint firstAttribute="trailing" secondItem="ngX-DN-NsN" secondAttribute="trailing" id="Ze0-3L-teS"/>
+                                            <constraint firstItem="5RT-Ql-hQi" firstAttribute="top" secondItem="M18-nv-0W2" secondAttribute="bottom" id="cTf-pv-9sW"/>
+                                            <constraint firstAttribute="trailing" secondItem="5RT-Ql-hQi" secondAttribute="trailing" id="cee-gm-UH6"/>
+                                            <constraint firstAttribute="bottom" secondItem="gLj-dc-cNU" secondAttribute="bottom" constant="32" id="dfj-Re-gEm"/>
+                                            <constraint firstItem="hlw-AN-Vxd" firstAttribute="leading" secondItem="68H-wu-HGD" secondAttribute="leading" constant="16" id="dnY-bp-HGZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="M18-nv-0W2" secondAttribute="trailing" id="fvu-Jz-6U9"/>
+                                            <constraint firstItem="y7Q-m8-gvE" firstAttribute="leading" secondItem="68H-wu-HGD" secondAttribute="leading" id="kEe-w7-CVg"/>
+                                            <constraint firstItem="gLj-dc-cNU" firstAttribute="top" secondItem="hlw-AN-Vxd" secondAttribute="bottom" constant="16" id="mNt-qq-0OX"/>
+                                            <constraint firstItem="Cy1-Yf-0UL" firstAttribute="leading" secondItem="68H-wu-HGD" secondAttribute="leading" constant="16" id="nzu-13-Cft"/>
+                                            <constraint firstAttribute="trailing" secondItem="y7Q-m8-gvE" secondAttribute="trailing" id="rze-Ji-5zO"/>
+                                            <constraint firstItem="y7Q-m8-gvE" firstAttribute="top" secondItem="tuZ-yA-zet" secondAttribute="bottom" id="u0j-Nr-Plv"/>
+                                            <constraint firstItem="tuZ-yA-zet" firstAttribute="top" secondItem="Cy1-Yf-0UL" secondAttribute="bottom" constant="4" id="wrd-9I-eWt"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="68H-wu-HGD" firstAttribute="trailing" secondItem="S3I-XU-wjf" secondAttribute="trailing" id="P0k-tq-XJt"/>
+                                    <constraint firstItem="68H-wu-HGD" firstAttribute="bottom" secondItem="S3I-XU-wjf" secondAttribute="bottom" id="Ynj-74-hNw"/>
+                                    <constraint firstItem="68H-wu-HGD" firstAttribute="leading" secondItem="S3I-XU-wjf" secondAttribute="leading" id="cBi-r9-CzI"/>
+                                    <constraint firstItem="68H-wu-HGD" firstAttribute="top" secondItem="S3I-XU-wjf" secondAttribute="top" id="cIR-Mo-G2w"/>
+                                    <constraint firstItem="68H-wu-HGD" firstAttribute="width" secondItem="TTI-0y-vxI" secondAttribute="width" id="wCI-Nz-Qww"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="S3I-XU-wjf"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="TTI-0y-vxI"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LLH-RH-MUr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="MGf-7U-1gW"/>
+                            <constraint firstItem="LLH-RH-MUr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fIg-0Z-bqj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LLH-RH-MUr" secondAttribute="trailing" id="kb8-HF-Ay6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="LLH-RH-MUr" secondAttribute="bottom" id="oJl-1K-4xB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="twI-q1-6u0"/>
+                    <size key="freeformSize" width="375" height="2000"/>
+                    <connections>
+                        <outlet property="alertButton" destination="1CG-cu-Pbo" id="5BH-Kn-n7d"/>
+                        <outlet property="alertIcon" destination="ltu-Wh-Bbe" id="l4g-RK-mnt"/>
+                        <outlet property="physicalWellness" destination="M18-nv-0W2" id="Ber-Pt-VwH"/>
+                        <outlet property="recommendedEvents" destination="tuZ-yA-zet" id="ex3-kS-AOq"/>
+                        <outlet property="recommendedPodcasts" destination="y7Q-m8-gvE" id="hTe-Sh-mp5"/>
+                        <outlet property="socialWellness" destination="5RT-Ql-hQi" id="H3T-QX-HDK"/>
+                        <outlet property="spiritualWellness" destination="ngX-DN-NsN" id="nGG-iq-Rkv"/>
+                        <outlet property="spotlightEvent" destination="gLj-dc-cNU" id="YeX-Pn-gob"/>
+                        <outlet property="spotlightEventTitleLabel" destination="hlw-AN-Vxd" id="5hc-Go-XO2"/>
+                        <outlet property="titleLabel" destination="Cy1-Yf-0UL" id="Bb5-NE-1F4"/>
+                        <segue destination="SJy-Ea-s3o" kind="show" identifier="forYouToEventDetailSegue" id="0VN-WU-fwo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077.5999999999999" y="69.715142428785612"/>
+        </scene>
+        <!--EventDetailViewController-->
+        <scene sceneID="uoW-eZ-vuq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Events" referencedIdentifier="EventDetailViewController" id="SJy-Ea-s3o" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gy1-Pb-NAk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cJp-tC-ugs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1903" y="-347"/>
+        </scene>
+        <!--For You-->
+        <scene sceneID="qBW-DV-RrF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="whg-Da-hzF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="For You" id="U4P-MQ-sel"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hFr-x2-bai">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="uec-hd-Y23"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yEh-qU-boc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="69.715142428785612"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bellIcon" width="32" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
