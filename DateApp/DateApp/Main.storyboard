@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="360" y="176"/>
         </scene>
-        <!--Notifications-->
+        <!--Personality-->
         <scene sceneID="GzK-dn-5Xy">
             <objects>
-                <viewControllerPlaceholder storyboardName="Notifications" id="e39-Sk-jf5" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Personality" id="e39-Sk-jf5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="0h1-Pu-08Y"/>
                     <navigationItem key="navigationItem" id="yAG-XG-5h2"/>
                 </viewControllerPlaceholder>

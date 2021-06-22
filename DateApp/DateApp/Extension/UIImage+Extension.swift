@@ -92,4 +92,12 @@ extension UIImage {
     static var bellIcon: UIImage? {
         return UIImage(named: "bellIcon")
     }
+
+    static var noAnswerFilled: UIImage? {
+        return UIImage(named: "noAnswerFilled")
+    }
+
+    static var yesAnswerFilled: UIImage? {
+        return UIImage(named: "yesAnswerFilled")
+    }
 }
