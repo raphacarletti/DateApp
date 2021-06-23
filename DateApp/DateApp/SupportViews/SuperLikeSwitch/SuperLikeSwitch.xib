@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuperLikeSwitch" customModule="DateApp" customModuleProvider="target">
+            <connections>
+                <outlet property="activateButtonToLeadingConstraint" destination="BJ4-4q-fTC" id="sPn-Ca-QgG"/>
+                <outlet property="activateButtonToTrailingConstraint" destination="BMd-6s-MT1" id="CGi-wG-zZc"/>
+                <outlet property="activateImageView" destination="Cle-T8-gSs" id="FaY-mD-QqI"/>
+                <outlet property="superLikeLabel" destination="jAW-Pm-DIh" id="v5i-Z9-iFs"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="128"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundSuperLikeSwitch" translatesAutoresizingMaskIntoConstraints="NO" id="Oez-kI-3ID">
+                    <rect key="frame" x="60" y="0.0" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="JOf-iG-bpG"/>
+                        <constraint firstAttribute="width" constant="240" id="sZs-r2-Nfx"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="activateSuperLikeSwitch" translatesAutoresizingMaskIntoConstraints="NO" id="Cle-T8-gSs">
+                    <rect key="frame" x="60" y="16" width="96" height="96"/>
+                    <color key="tintColor" red="0.5450980392" green="0.56470588239999997" blue="0.62352941179999999" alpha="0.57999999999999996" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="96" id="AVF-Hb-yUi"/>
+                        <constraint firstAttribute="height" constant="96" id="ID6-NB-c2D"/>
+                        <constraint firstAttribute="width" secondItem="Cle-T8-gSs" secondAttribute="height" multiplier="1:1" id="QxY-cN-0Xk"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPER LIKE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAW-Pm-DIh">
+                    <rect key="frame" x="164" y="55" width="136" height="18"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="jAW-Pm-DIh" firstAttribute="leading" secondItem="Cle-T8-gSs" secondAttribute="trailing" constant="8" id="1Sy-xK-xP7"/>
+                <constraint firstItem="jAW-Pm-DIh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="61J-QX-Tte"/>
+                <constraint firstItem="Cle-T8-gSs" firstAttribute="leading" secondItem="Oez-kI-3ID" secondAttribute="leading" priority="750" id="BJ4-4q-fTC"/>
+                <constraint firstItem="Cle-T8-gSs" firstAttribute="trailing" secondItem="Oez-kI-3ID" secondAttribute="trailing" priority="250" id="BMd-6s-MT1"/>
+                <constraint firstItem="jAW-Pm-DIh" firstAttribute="trailing" secondItem="Oez-kI-3ID" secondAttribute="trailing" id="OqA-Y3-X8k"/>
+                <constraint firstItem="Oez-kI-3ID" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bbv-5K-kmM"/>
+                <constraint firstItem="Oez-kI-3ID" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eVp-zV-m2E"/>
+                <constraint firstItem="Oez-kI-3ID" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fhy-I6-CNS"/>
+                <constraint firstItem="Cle-T8-gSs" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rbH-uk-hhw"/>
+                <constraint firstItem="Oez-kI-3ID" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ue7-QY-rgc"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="56.521739130434788" y="-172.76785714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="activateSuperLikeSwitch" width="96" height="96"/>
+        <image name="backgroundSuperLikeSwitch" width="264" height="108"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

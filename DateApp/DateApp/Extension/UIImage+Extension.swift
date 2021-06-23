@@ -108,4 +108,12 @@ extension UIImage {
     static var selectedPageControl: UIImage? {
         return UIImage(named: "selectedPageControl")
     }
+
+    static var activateSuperLikeSwitch: UIImage? {
+        return UIImage(named: "activateSuperLikeSwitch")
+    }
+
+    static var deactivateSuperLikeSwitch: UIImage? {
+        return UIImage(named: "deactivateSuperLikeSwitch")
+    }
 }

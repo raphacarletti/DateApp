@@ -75,6 +75,8 @@
 		6DB8CB3C268290DE0084DC78 /* PersonalityWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB8CB3B268290DE0084DC78 /* PersonalityWorker.swift */; };
 		6DB8CB3E268360AB0084DC78 /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB8CB3D268360AB0084DC78 /* CustomPageControl.swift */; };
 		6DB8CB4126836A3F0084DC78 /* CustomPageControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB8CB4026836A3F0084DC78 /* CustomPageControl.xib */; };
+		6DB8CB4426836D830084DC78 /* SuperLikeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB8CB4326836D830084DC78 /* SuperLikeSwitch.swift */; };
+		6DB8CB4626836D9C0084DC78 /* SuperLikeSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB8CB4526836D9C0084DC78 /* SuperLikeSwitch.xib */; };
 		6DD0DBA02655C0C00025AF3C /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0DB9F2655C0C00025AF3C /* EventsListViewController.swift */; };
 		6DD0DBA32655C6290025AF3C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0DBA22655C6290025AF3C /* UIColor+Extension.swift */; };
 		6DD0DBA52655CB270025AF3C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0DBA42655CB270025AF3C /* UIImage+Extension.swift */; };
@@ -180,6 +182,8 @@
 		6DB8CB3B268290DE0084DC78 /* PersonalityWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityWorker.swift; sourceTree = "<group>"; };
 		6DB8CB3D268360AB0084DC78 /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
 		6DB8CB4026836A3F0084DC78 /* CustomPageControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPageControl.xib; sourceTree = "<group>"; };
+		6DB8CB4326836D830084DC78 /* SuperLikeSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperLikeSwitch.swift; sourceTree = "<group>"; };
+		6DB8CB4526836D9C0084DC78 /* SuperLikeSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuperLikeSwitch.xib; sourceTree = "<group>"; };
 		6DD0DB9F2655C0C00025AF3C /* EventsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
 		6DD0DBA22655C6290025AF3C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		6DD0DBA42655CB270025AF3C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -321,6 +325,7 @@
 		6D800BA2266ECAF700C7EB08 /* SupportViews */ = {
 			isa = PBXGroup;
 			children = (
+				6DB8CB4226836D740084DC78 /* SuperLikeSwitch */,
 				6DB8CB3F26836A250084DC78 /* CustomPageControl */,
 				6DAA32A5265C532400D74337 /* SectionHeaderView */,
 			);
@@ -636,6 +641,15 @@
 			path = CustomPageControl;
 			sourceTree = "<group>";
 		};
+		6DB8CB4226836D740084DC78 /* SuperLikeSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				6DB8CB4326836D830084DC78 /* SuperLikeSwitch.swift */,
+				6DB8CB4526836D9C0084DC78 /* SuperLikeSwitch.xib */,
+			);
+			path = SuperLikeSwitch;
+			sourceTree = "<group>";
+		};
 		6DD0DB9E2655C0A70025AF3C /* EventsList */ = {
 			isa = PBXGroup;
 			children = (
@@ -844,6 +858,7 @@
 				6DD0DBAA2655CF280025AF3C /* EventTableViewCell.xib in Resources */,
 				6D2E44402655BDD1004B98BC /* LaunchScreen.storyboard in Resources */,
 				6DF9BA1C26627A1D00803C7F /* ChatEventTableViewCell.xib in Resources */,
+				6DB8CB4626836D9C0084DC78 /* SuperLikeSwitch.xib in Resources */,
 				6D800BE92676707F00C7EB08 /* SearchFilterView.xib in Resources */,
 				6DD0DBC3265852BB0025AF3C /* EventSummaryView.xib in Resources */,
 				6D800BBB26740EC800C7EB08 /* SendInviteProfileTableViewCell.xib in Resources */,
@@ -959,6 +974,7 @@
 				6D800BEC26767DBE00C7EB08 /* PillarFilterViewController.swift in Sources */,
 				6DAA32B0265DBBF000D74337 /* LoadingUtils.swift in Sources */,
 				6DB8CB2226813F760084DC78 /* MySavedWorker.swift in Sources */,
+				6DB8CB4426836D830084DC78 /* SuperLikeSwitch.swift in Sources */,
 				6DD0DBA52655CB270025AF3C /* UIImage+Extension.swift in Sources */,
 				6DB8CB3C268290DE0084DC78 /* PersonalityWorker.swift in Sources */,
 				6DD0DBCE265B09D90025AF3C /* ShapeLayerUtils.swift in Sources */,

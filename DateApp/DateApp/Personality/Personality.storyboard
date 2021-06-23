@@ -57,17 +57,9 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="406.5" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y88-8s-wbs">
                                                 <rect key="frame" x="16" y="93.5" width="343" height="406.5"/>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXZ-uQ-aeM">
-                                                <rect key="frame" x="329" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
-                                                <connections>
-                                                    <segue destination="hKj-Zv-lAV" kind="show" id="PaT-AX-aXF"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="DXZ-uQ-aeM" firstAttribute="top" secondItem="iaS-L9-cuT" secondAttribute="top" id="2IO-a2-5jX"/>
                                             <constraint firstAttribute="trailing" secondItem="Ltc-Tq-HH5" secondAttribute="trailing" constant="16" id="5m3-hK-sDW"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dlT-cb-Lht" secondAttribute="trailing" constant="8" id="AuZ-m0-DcL"/>
                                             <constraint firstItem="AKL-OZ-neb" firstAttribute="leading" secondItem="iaS-L9-cuT" secondAttribute="leading" constant="16" id="H26-F0-gE9"/>
@@ -77,7 +69,6 @@
                                             <constraint firstItem="dlT-cb-Lht" firstAttribute="top" secondItem="iaS-L9-cuT" secondAttribute="top" constant="48" id="TaW-dd-0xt"/>
                                             <constraint firstItem="AKL-OZ-neb" firstAttribute="top" secondItem="iaS-L9-cuT" secondAttribute="top" constant="16" id="Wos-Ew-GeC"/>
                                             <constraint firstItem="Y88-8s-wbs" firstAttribute="top" secondItem="Ltc-Tq-HH5" secondAttribute="bottom" constant="16" id="bue-TV-5rw"/>
-                                            <constraint firstAttribute="trailing" secondItem="DXZ-uQ-aeM" secondAttribute="trailing" id="eIg-hf-ezC"/>
                                             <constraint firstAttribute="trailing" secondItem="Y88-8s-wbs" secondAttribute="trailing" constant="16" id="eo1-yo-kxa"/>
                                             <constraint firstAttribute="bottom" secondItem="Y88-8s-wbs" secondAttribute="bottom" constant="16" id="fcl-ao-Bac"/>
                                             <constraint firstItem="Ltc-Tq-HH5" firstAttribute="leading" secondItem="iaS-L9-cuT" secondAttribute="leading" constant="16" id="hNG-l8-OnT"/>
@@ -125,34 +116,6 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="69.715142428785612"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="EV7-9d-qja">
-            <objects>
-                <viewController id="hKj-Zv-lAV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gvN-52-Suf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="359" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="ue0-pi-Wwr" customClass="CustomPageControl" customModule="DateApp" customModuleProvider="target">
-                                <rect key="frame" x="8" y="44" width="359" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Ij5-4l-hiS"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
-                        <constraints>
-                            <constraint firstItem="ue0-pi-Wwr" firstAttribute="centerX" secondItem="gvN-52-Suf" secondAttribute="centerX" id="54h-xJ-Bou"/>
-                            <constraint firstItem="ue0-pi-Wwr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ij5-4l-hiS" secondAttribute="leading" constant="8" id="6qJ-Ls-XDH"/>
-                            <constraint firstItem="Ij5-4l-hiS" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ue0-pi-Wwr" secondAttribute="trailing" constant="8" id="KuD-eK-Zel"/>
-                            <constraint firstItem="ue0-pi-Wwr" firstAttribute="top" secondItem="Ij5-4l-hiS" secondAttribute="top" id="W6n-3O-I3E"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="4JS-il-eDD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mFP-BT-do8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2120" y="98"/>
-        </scene>
         <!--Personality-->
         <scene sceneID="O3E-Ur-xzq">
             <objects>
@@ -176,9 +139,6 @@
     </scenes>
     <resources>
         <image name="backArrowIcon" width="32" height="32"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
