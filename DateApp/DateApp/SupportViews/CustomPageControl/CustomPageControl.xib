@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomPageControl" customModule="DateApp" customModuleProvider="target">
+            <connections>
+                <outlet property="stackView" destination="NBx-h5-HKq" id="dKC-BS-dvY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="139" height="61"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="NBx-h5-HKq">
+                    <rect key="frame" x="25.5" y="0.0" width="88" height="61"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selectedPageControl" translatesAutoresizingMaskIntoConstraints="NO" id="cJs-E4-lhc">
+                            <rect key="frame" x="0.0" y="20.5" width="20" height="20.5"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notSelectedPageControl" translatesAutoresizingMaskIntoConstraints="NO" id="470-Cg-yca">
+                            <rect key="frame" x="28" y="16.5" width="28" height="28.5"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notSelectedPageControl" translatesAutoresizingMaskIntoConstraints="NO" id="cl9-Mv-ByH">
+                            <rect key="frame" x="60" y="16.5" width="28" height="28.5"/>
+                        </imageView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NBx-h5-HKq" secondAttribute="trailing" id="2F7-X1-HOJ"/>
+                <constraint firstItem="NBx-h5-HKq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ewz-CZ-Jww"/>
+                <constraint firstAttribute="bottom" secondItem="NBx-h5-HKq" secondAttribute="bottom" id="XHZ-0i-MBb"/>
+                <constraint firstItem="NBx-h5-HKq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" id="bH5-C6-M0S"/>
+                <constraint firstItem="NBx-h5-HKq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ebd-as-0pW"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-103.62318840579711" y="-167.07589285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="notSelectedPageControl" width="28" height="28.5"/>
+        <image name="selectedPageControl" width="20" height="20.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

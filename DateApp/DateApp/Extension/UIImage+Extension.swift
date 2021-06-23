@@ -100,4 +100,12 @@ extension UIImage {
     static var yesAnswerFilled: UIImage? {
         return UIImage(named: "yesAnswerFilled")
     }
+
+    static var notSelectedPageControl: UIImage? {
+        return UIImage(named: "notSelectedPageControl")
+    }
+
+    static var selectedPageControl: UIImage? {
+        return UIImage(named: "selectedPageControl")
+    }
 }
